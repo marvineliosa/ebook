@@ -16,7 +16,7 @@
         <li class="header">MENÚ</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-list-alt"></i> <span>Contenido</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -26,7 +26,7 @@
           </ul>
         </li>
 
-        <li><a href="/salir"><i class="fa fa-book"></i> <span>Salir</span></a></li>
+        <li><a href="/salir"><i class="fa fa-sign-out"></i> <span>Salir</span></a></li>
       </ul>
       
     </section>
