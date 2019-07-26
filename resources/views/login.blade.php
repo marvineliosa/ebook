@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -36,7 +36,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Inicio de sesión</p>
 
-    <form action="../../index2.html" method="post">
+    <div a method="post">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Correo electrónico">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -59,10 +59,10 @@
         </div> -->
         <!-- /.col -->
         <div class="col-xs-12">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar sesión</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="ingresar()">Iniciar sesión</button>
         </div>
       </div>
-    </form>
+    </div>
 
     <!-- <div class="social-auth-links text-center">
       <p>- OR -</p>
@@ -95,6 +95,10 @@
       increaseArea: '20%' /* optional */
     });
   });
+
+  function ingresar(){
+    location.href='/prueba';
+  }
 </script>
 </body>
 </html>

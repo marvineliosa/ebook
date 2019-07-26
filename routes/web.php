@@ -21,3 +21,9 @@ Route::get('/prueba', function () {
 Route::get('/salir', function () {
     return view('login');
 });
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/pagina/{numero}', function () {
+    return view('pagina');
+});
