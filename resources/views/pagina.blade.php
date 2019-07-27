@@ -51,3 +51,11 @@
 </section>
 <!-- /.content -->
 @endsection
+
+@section('script')
+  <script type="text/javascript">
+    // function siguiente(pagina){
+    //   location.href = 'demo'+pagina+'.html';
+    // }
+  </script>
+@endsection
