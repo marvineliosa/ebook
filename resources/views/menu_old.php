@@ -23,6 +23,7 @@
   <!-- <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css"> -->
   <link href="{{asset('dist/css/skins/_all-skins.min.css')}}" rel="stylesheet">
 
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -194,14 +195,14 @@
   <!-- =============================================== -->
 
   <!-- Left side column. contains the sidebar -->
-  
+
   @include('plantillas.navbar')
 
   <!-- =============================================== -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    
+
     @yield('content')
 
   </div>
