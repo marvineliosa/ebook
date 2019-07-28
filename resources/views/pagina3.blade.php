@@ -34,13 +34,13 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" >
+        <img src="{{asset('paginas/p3.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p3L.PNG')}}'" >
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" disabled='true'><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
         <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
@@ -53,16 +53,16 @@
 @endsection
 
 @section('script')
-  <script type="text/javascript">
-    function siguiente()
-       {
-         //location.href = 'demo'+pagina+'.html';
-         Alert("adelante");
-       }
-     function anterior()
-        {
-          //location.href = 'demo'+pagina+'.html';
-          Alert("atras");
-        }
-  </script>
+<script type="text/javascript">
+  function siguiente()
+     {
+       //location.href = 'demo'+pagina+'.html';
+       Alert("adelante");
+     }
+   function anterior()
+      {
+        //location.href = 'demo'+pagina+'.html';
+        Alert("atras");
+      }
+</script>
 @endsection
