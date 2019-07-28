@@ -103,7 +103,7 @@
                   <div class="box-footer" align="center">
                         <div class="btn-group">
                               <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
-                              <button type="button" class="btn btn-default" disabled='true'><i class="fa fa-arrow-right"></i></button>
+                              <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
                         </div>
                   </div>
 
