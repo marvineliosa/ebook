@@ -54,8 +54,8 @@
 
                   <div class="box-footer" align="center">
                         <div class="btn-group">
-                              <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
-                              <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
+                              <button type="button" class="btn btn-default" onclick="anterior(7)"><i class="fa  fa-arrow-left"></i></button>
+                              <button type="button" class="btn btn-default" onclick="siguiente(9)"><i class="fa fa-arrow-right"></i></button>
                         </div>
                   </div>
 
@@ -71,15 +71,15 @@
 
 @section('script')
       <script type="text/javascript">
-        function c()
-           {
-             //location.href = 'demo'+pagina+'.html';
-             Alert("adelante");
-           }
-         function anterior()
-            {
-              //location.href = 'demo'+pagina+'.html';
-              Alert("atras");
-            }
+    function siguiente(pagina)
+       {
+         location.href = '/pagina/Tema_1_Compromiso';
+         //alert("adelante");
+       }
+     function anterior(pagina)
+        {
+          location.href = '/pagina/'+pagina;
+          //alert("atras");
+        }
       </script>
 @endsection
