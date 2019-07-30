@@ -33,9 +33,8 @@
       </div> -->
     </div>
     <div class="box-body">
-      <div align='center' id="zoomdiv">
-        <!--<img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > LINEA TRABJA CON JETZOOM-->
-        <span class='zoom' id='ex1'><img src="{{asset('paginas/p1.PNG')}}" id='jack' alt='Daisy on the Ohoopee'/> <!-- LINEA TRABAJA CON JQUERYZOOM -->
+      <div align='center'>
+        <img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->
@@ -65,5 +64,9 @@
           //location.href = 'demo'+pagina+'.html';
           //alert("atras");
         }
+  </script>
+  <!-- script zoom con jetzoom-->
+  <script type="text/javascript">
+   JetZoom.quickStart();
   </script>
 @endsection

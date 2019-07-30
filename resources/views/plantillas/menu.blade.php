@@ -24,7 +24,7 @@
   <link href="{{asset('dist/css/skins/_all-skins.min.css')}}" rel="stylesheet">
   <!--ZOOM -->
   <!-- Include Cloud Zoom CSS. -->
-  <!--<link rel="stylesheet" href="{{asset('plugins/jetzoom/jetzoom.css')}}"> CSS PARA JETZOOM-->
+  <link rel="stylesheet" href="{{asset('plugins/jetzoom/jetzoom.css')}}"> <!--CSS PARA JETZOOM-->
   <!--FIN ZOOM-->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -115,18 +115,12 @@
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree();
-    //$('#zoomdiv').zoom({url:"{{asset('paginas/p1L.PNG')}}"}); Linea trabaja con jetzoom
-    $('#zoomdiv').zoom({magnify:1.3}); //linea trabaja con jqueryzomm
   })
 </script>
 
 <!--zoom-->
 <script src="{{asset('plugins/jqueryzoom/jquery.zoom.js')}}"></script> <!-- linea libreria jqueryzomm -->
-
-<!--<script type="text/javascript" src="{{asset('plugins/jetzoom/jetzoom.js')}}"></script> libreria y script jetzomm
-<script type="text/javascript">
- JetZoom.quickStart();
-</script>
+<script type="text/javascript" src="{{asset('plugins/jetzoom/jetzoom.js')}}"></script> <!--libreria y script jetzomm
 fin zoom-->
 </body>
 </html>
