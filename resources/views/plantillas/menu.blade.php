@@ -130,3 +130,5 @@
 fin zoom-->
 </body>
 </html>
+
+@yield('script')

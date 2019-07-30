@@ -1,13 +1,13 @@
 @extends('plantillas.menu')
-@section('titulo','Título')
+@section('titulo','Guía de Maestros')
 
 @section('content')
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Nombre de la página
-    <small>Algún texto pequeño</small>
+    Guía de Maestros
+    <!-- <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
     <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header with-border">
-      <h3 class="box-title">Título</h3>
+      <!-- <h3 class="box-title">Guía de Maestros</h3> -->
 
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -33,16 +33,15 @@
       </div> -->
     </div>
     <div class="box-body">
-      <div align='center' id="zoomdiv">
-        <!--<img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > LINEA TRABJA CON JETZOOM-->
-        <span class='zoom' id='ex1'><img src="{{asset('paginas/p1.PNG')}}" id='jack' alt='Daisy on the Ohoopee'/> <!-- LINEA TRABAJA CON JQUERYZOOM -->
+      <div align='center'>
+        <img src="{{asset('paginas/Guia_maestro.png')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Guia_maestroL.png')}}'" >
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" disabled='true'><i class="fa  fa-arrow-left"></i></button>
-        <button type="button" class="btn btn-default" onclick="siguiente(2)"><i class="fa fa-arrow-right"></i></button>
+        <!-- <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button> -->
       </div>
     </div>
     <!-- /.box-footer-->
@@ -54,16 +53,16 @@
 @endsection
 
 @section('script')
-  <script type="text/javascript">
-    function siguiente(pagina)
-       {
-         location.href = '/pagina/'+pagina;
-         //alert("adelante");
-       }
-     function anterior()
-        {
-          //location.href = 'demo'+pagina+'.html';
-          //alert("atras");
-        }
-  </script>
+<script type="text/javascript">
+  function siguiente()
+     {
+       //location.href = 'demo'+pagina+'.html';
+       Alert("adelante");
+     }
+   function anterior()
+      {
+        //location.href = 'demo'+pagina+'.html';
+        Alert("atras");
+      }
+</script>
 @endsection

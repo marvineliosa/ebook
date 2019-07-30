@@ -33,16 +33,15 @@
       </div> -->
     </div>
     <div class="box-body">
-      <div align='center' id="zoomdiv">
-        <!--<img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > LINEA TRABJA CON JETZOOM-->
-        <span class='zoom' id='ex1'><img src="{{asset('paginas/p1.PNG')}}" id='jack' alt='Daisy on the Ohoopee'/> <!-- LINEA TRABAJA CON JQUERYZOOM -->
+      <div align='center'>
+        <img src="{{asset('paginas/p3.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p3L.PNG')}}'" >
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" disabled='true'><i class="fa  fa-arrow-left"></i></button>
-        <button type="button" class="btn btn-default" onclick="siguiente(2)"><i class="fa fa-arrow-right"></i></button>
+        <button type="button" class="btn btn-default" onclick="anterior(2)"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="siguiente(4)"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
     <!-- /.box-footer-->
@@ -54,16 +53,16 @@
 @endsection
 
 @section('script')
-  <script type="text/javascript">
+<script type="text/javascript">
     function siguiente(pagina)
        {
          location.href = '/pagina/'+pagina;
          //alert("adelante");
        }
-     function anterior()
+     function anterior(pagina)
         {
-          //location.href = 'demo'+pagina+'.html';
+          location.href = '/pagina/'+pagina;
           //alert("atras");
         }
-  </script>
+</script>
 @endsection
