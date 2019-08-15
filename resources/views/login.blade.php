@@ -97,7 +97,7 @@
   });
 
   function ingresar(){
-    location.href='/prueba';
+    location.href='/pagina/1';
   }
 </script>
 </body>
