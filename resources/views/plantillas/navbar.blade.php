@@ -25,6 +25,7 @@
           </a>
           <ul class="treeview-menu">
             <!-- <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Libros</a></li> -->
+            <li><a href="/pagina/1"><i class="fa fa-circle-o"></i> Libros</a></li>
             <li><a href="/pagina/Guia_Maestro"><i class="fa fa-circle-o"></i> Guía de Maestros</a></li>
             <li><a href="/pagina/Guia_Maestro_Metodo"><i class="fa fa-circle-o"></i> Método ExE</a></li>
           </ul>

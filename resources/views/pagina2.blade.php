@@ -6,8 +6,8 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Nombre de la página
-    <small>Algún texto pequeño</small>
+    Página 2
+    <!-- <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
     <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,8 +21,10 @@
 
   <!-- Default box -->
   <div class="box">
-    <div class="box-header with-border">
-      <h3 class="box-title">Título</h3>
+    <div class="box-header with-border" align="center">
+      <h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/Parte 1.wav')}}">
+        </audio></h3>
 
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -35,7 +37,10 @@
     <div class="box-body">
       <div align='center' id="zoomdiv">
         <!--<img src="{{asset('paginas/p2.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > -->
-        <span class='zoom' id='ex1'><img src="{{asset('paginas/p1.PNG')}}" id='jack' alt='Daisy on the Ohoopee'/> <!-- LINEA TRABAJA CON JQUERYZOOM -->
+        <!-- <audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/recado_secreto.wav')}}">
+        </audio> -->
+        <span class='zoom' id='ex1'><img src="{{asset('paginas/p2.PNG')}}" id='jack' alt='Daisy on the Ohoopee'/> <!-- LINEA TRABAJA CON JQUERYZOOM -->
       </div>
     </div>
     <!-- /.box-body -->
@@ -68,6 +73,7 @@
 
         $(document).ready(function () {
           $('#zoomdiv').zoom({magnify:1.3}); //linea trabaja con jqueryzomm
+        
         })
 </script>
 @endsection
