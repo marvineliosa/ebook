@@ -42,3 +42,4 @@ Route::get('/pagina/Tema_1_Actividad', function (){return view('pagina8_Activida
 Route::get('/pagina/Tema_1_Compromiso', function (){return view('pagina9_Compromiso');});
 Route::get('/pagina/Guia_Maestro', function (){return view('pagina10_Guia_Maestro');});
 Route::get('/pagina/Guia_Maestro_Metodo', function (){return view('pagina11_Guia_Maestro_Metodo');});
+Route::get('/pagina/Comentario/1', function (){return view('pagina12_Comentario_Libro_1');});
