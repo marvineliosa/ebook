@@ -29,23 +29,23 @@
                       <div align='center'>
                               <!-- <img src="{{asset('paginas/p7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p7L.PNG')}}'" > -->
                               <div class="login-box ">
-                                      <img src="{{asset('paginas/Tema_1_Actividad_1_Instrucciones.PNG')}}" class="img-fluid" style="width:100%;">
-                                      <br>
-                                      <br>
-                                      <p class="text-left"> ¿Que aprendiste del cuento: <code class="text-yellow "><strong>El recado secreto 2</strong></code>?</p>
-                                      <br>
-                                      <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta">
-                                      <br>
-                                      <p class="text-left"> ¿Como te sientes con los <strong> Valores </strong>que aprendiste hoy?</p>
-                                      <br>
-                                      <input type="text text-center" class="form-control" align="center" id="Entrada_Valores_hoy" placeholder="Escribe aqui tu respuesta">
-                                      <br>
-                                      <p class="text-left"> Explica porque te sientes asi:</p>
-                                      <br>
-                                      <input type="text text-center" class="form-control" align="center" id="Entrada_Como_me_siento" placeholder="Escribe aqui tu respuesta">
-                                      <br>
-                                      <br>
-                                      <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()">Enviar Respuestas</button>
+                                <img src="{{asset('paginas/Tema_1_Actividad_1_Instrucciones.PNG')}}" class="img-fluid" style="width:100%;">
+                                <br>
+                                <br>
+                                <p class="text-left"> ¿Que aprendiste del cuento: <code class="text-yellow "><strong>El recado secreto 2</strong></code>?</p>
+                                <br>
+                                <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta">
+                                <br>
+                                <p class="text-left"> ¿Como te sientes con los <strong> Valores </strong>que aprendiste hoy?</p>
+                                <br>
+                                <input type="text text-center" class="form-control" align="center" id="Entrada_Valores_hoy" placeholder="Escribe aqui tu respuesta">
+                                <br>
+                                <p class="text-left"> Explica porque te sientes asi:</p>
+                                <br>
+                                <input type="text text-center" class="form-control" align="center" id="Entrada_Como_me_siento" placeholder="Escribe aqui tu respuesta">
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()">Enviar Respuestas</button>
 
                               </div>
                       </div>
