@@ -126,3 +126,40 @@ fin zoom-->
 </html>
 
 @yield('script')
+
+<script type="text/javascript">
+  
+  //señor metodo maestro ajax
+  function metodoAjax(url,dataForm,callback){
+    var resultado = null;
+    
+    $.ajax({
+      url :url,
+      data : dataForm,
+      contentType:false,
+      processData:false,
+      headers:{
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+      type: 'POST',
+      dataType : 'json',
+      beforeSend: function (){
+        $("#modalCarga").modal();
+      },
+      success : function(json){
+        //resultado = json;
+        callback(json);
+      },
+      error : function(xhr, status) {
+        $("#textoModalMensaje").text('Existió un problema con la operación');
+        $("#modalMensaje").modal();
+        MensajeModal('¡ERROR!','Existió un problema, intentelo de nuevo, si el problema persiste favor de reportarlo a la extensión 5897.')
+      },
+      complete : function(xhr, status){
+         $("#modalCarga").modal('hide');
+      }
+    });//*/
+  }
+
+  
+</script>

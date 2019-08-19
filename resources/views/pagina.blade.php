@@ -36,7 +36,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > <!--LINEA TRABJA CON JETZOOM-->
+        <img src="{{asset('paginas/p1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" style="max-width: 100%" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->

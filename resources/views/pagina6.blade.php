@@ -36,7 +36,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/p6.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p6L.PNG')}}'" >
+        <img src="{{asset('paginas/p6.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p6L.PNG')}}'"  style="max-width: 100%">
       </div>
     </div>
     <!-- /.box-body -->
@@ -56,6 +56,7 @@
 
 @section('script')
 <script type="text/javascript">
+  JetZoom.quickStart();
     function siguiente(pagina)
        {
          location.href = '/pagina/'+pagina;

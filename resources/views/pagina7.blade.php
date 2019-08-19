@@ -13,6 +13,7 @@
     <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Examples</a></li>
     <li class="active">Blank page</li> -->
+
   </ol>
 </section>
 
@@ -21,9 +22,8 @@
 
   <!-- Default box -->
   <div class="box">
-    <div class="box-header with-border">
-      <h3 class="box-title">Título</h3>
-
+    <div class="box-header with-border" align="center">
+      <button type="submit" class="btn btn-success" onclick="ingresar()">Sugerencias Para Papás</button>
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
@@ -34,7 +34,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/p7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p7L.PNG')}}'" >
+        <img src="{{asset('paginas/p7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p7L.PNG')}}'"  style="max-width: 100%">
       </div>
     </div>
     <!-- /.box-body -->
@@ -54,6 +54,7 @@
 
 @section('script')
 <script type="text/javascript">
+  JetZoom.quickStart();
     function siguiente(pagina)
        {
          location.href = '/pagina/Tema_1_Actividad';

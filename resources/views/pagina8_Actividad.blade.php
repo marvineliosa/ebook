@@ -8,6 +8,7 @@
       <section class="content-header">
             <h1>Nombre de la página<small>Algún texto pequeño</small></h1>
             <ol class="breadcrumb"><!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li><li><a href="#">Examples</a></li><li class="active">Blank page</li> --> </ol>
+            <button type="button" class="btn btn-default" disabled="true"><i class="fa fa-arrow-right"></i></button>
       </section>
 
       <!-- Main content -->
@@ -70,7 +71,7 @@
 @endsection
 
 @section('script')
-      <script type="text/javascript">
+  <script type="text/javascript">
     function siguiente(pagina)
        {
          location.href = '/pagina/Tema_1_Compromiso';
@@ -81,5 +82,16 @@
           location.href = '/pagina/'+pagina;
           //alert("atras");
         }
-      </script>
+
+      function almacenarInformacion(){
+        
+        //$("#div_cuadro").hide();
+        var success;
+        var url = "/solicitud/obtener_fechas";
+        var dataForm = new FormData();
+        dataForm.append('id_sol',id_sol);
+        //lamando al metodo ajax
+      }
+
+  </script>
 @endsection
