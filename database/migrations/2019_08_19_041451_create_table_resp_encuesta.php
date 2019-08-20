@@ -21,6 +21,7 @@ class CreateTableRespEncuesta extends Migration
             $table->string('escuela');
             $table->string('estado');
             $table->text('descripcion');
+            $table->string('user');
             $table->timestamps();
         });
     }

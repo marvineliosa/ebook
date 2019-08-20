@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -129,6 +130,10 @@ fin zoom-->
 
 <script type="text/javascript">
   
+    function sugerencia(){
+      $("#ModalPadres").modal();
+
+    }
   //señor metodo maestro ajax
   function metodoAjax(url,dataForm,callback){
     var resultado = null;

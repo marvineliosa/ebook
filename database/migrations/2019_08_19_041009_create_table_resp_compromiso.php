@@ -23,7 +23,7 @@ class CreateTableRespCompromiso extends Migration
             $table->string('familiar1');
             $table->string('familiar2');
             $table->string('familiar3');
-            $table->integer('uset');
+            $table->string('user');
             $table->timestamps();
         });
     }

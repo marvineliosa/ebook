@@ -7,8 +7,13 @@
           <img src="{{asset('images/imagen_exe.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Marvin Eliosa</p>
-          <a href="#">Alumno/Padre/Profesor</a>
+          <!-- <p>Marvin Eliosa</p> -->
+          @if( isset(\Session::get('usuario')[0]) )
+            <p>{{ \Session::get('usuario')[0] }}</p>
+          @else
+            <p> Usuario </p>
+          @endif
+          <a href="#">Alumno/Profesor</a>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->

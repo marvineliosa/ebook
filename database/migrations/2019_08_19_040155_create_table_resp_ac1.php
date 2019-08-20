@@ -18,7 +18,7 @@ class CreateTableRespAc1 extends Migration
             $table->string('respuesta1');
             $table->string('respuesta2');
             $table->string('respuesta3');
-            $table->integer('uset');
+            $table->string('user');
             $table->timestamps();
         });
     }

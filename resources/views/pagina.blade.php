@@ -21,7 +21,10 @@
 
   <!-- Default box -->
   <div class="box">
-    <div class="box-header with-border" align="center">
+      <div class="box-header with-border" align="center">
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias Para Papás</button>
+      <br>
+      <br>
       <h3 class="box-title"><audio id="audio" controls>
           <source type="audio/wav" src="{{asset('audio/Parte 0.wav')}}">
         </audio></h3>
@@ -52,6 +55,29 @@
 
 </section>
 <!-- /.content -->
+
+<!-- Modal -->
+<div class="modal fade" id="ModalPadres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div align='center'>
+          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('script')

@@ -28,57 +28,58 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>eBooks</b></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Inicio de sesión</p>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>eBooks</b></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+      <p class="login-box-msg">Inicio de sesión</p>
 
-    <div a method="post">
-      <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Correo electrónico">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Contraseña">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row" align="center">
-        <!-- <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
+      <div a method="post">
+        <div class="form-group has-feedback">
+          <input type="email" class="form-control" placeholder="Correo electrónico" id="LoginMail">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control" placeholder="Contraseña" id="LoginPassword">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row" align="center">
+          <!-- <div class="col-xs-8">
+            <div class="checkbox icheck">
+              <label>
+                <input type="checkbox"> Remember Me
+              </label>
+            </div>
+          </div> -->
+          <!-- /.col -->
+          <!-- <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          </div> -->
+          <!-- /.col -->
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="ingresar()">Iniciar sesión</button>
           </div>
-        </div> -->
-        <!-- /.col -->
-        <!-- <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-        </div> -->
-        <!-- /.col -->
-        <div class="col-xs-12">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="ingresar()">Iniciar sesión</button>
         </div>
       </div>
+
+      <!-- <div class="social-auth-links text-center">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+          Facebook</a>
+        <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+          Google+</a>
+      </div> -->
+      <!-- /.social-auth-links -->
+
+      <a href="#">Recuperar contraseña</a><br>
+      <a href="#" class="text-center">Registrarse</a>
+
     </div>
-
-    <!-- <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-        Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-        Google+</a>
-    </div> -->
-    <!-- /.social-auth-links -->
-
-    <a href="#">Recuperar contraseña</a><br>
-    <a href="#" class="text-center">Registrarse</a>
-
+    <!-- /.login-box-body -->
   </div>
-  <!-- /.login-box-body -->
-</div>
 <!-- /.login-box -->
 
 <!-- jQuery 3 -->
@@ -97,7 +98,44 @@
   });
 
   function ingresar(){
-    location.href='/pagina/1';
+    var usuario = $("#LoginMail").val();
+    var password = $("#LoginPassword").val();
+
+    var success;
+    var url = "/login/validar";
+    var dataForm = new FormData();
+    dataForm.append('usuario',usuario);
+    dataForm.append('password',password);
+    //console.log(usuario);
+    //console.log(pass);
+    $.ajax({
+      url :url,
+      data : dataForm,
+      contentType:false,
+      processData:false,
+      headers:{
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+      type: 'POST',
+      dataType : 'json',
+      beforeSend: function (){
+        $("#modalCarga").modal();
+      },
+      success : function(json){
+
+        location.href='/pagina/1';
+
+
+      },
+      error : function(xhr, status) {
+        $("#textoModalMensaje").text('Existió un problema con la operación');
+        $("#modalMensaje").modal();
+      },
+      complete : function(xhr, status){
+         $("#modalCarga").modal('hide');
+      }
+    });//*/
+    //location.href='/pagina/1';
   }
 </script>
 </body>
