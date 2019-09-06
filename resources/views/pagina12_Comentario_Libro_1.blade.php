@@ -82,17 +82,17 @@
                   <br>
                 </div>
               </div>
-              <p class="text-green ">Nombre de tu Escuela:</p>
-              <input type="text" class="form-control" id="Entrada_nombre_Escuela" placeholder="Pon el nombre de tu escuela aqui..." value="{{((isset($datos->escuela))?$datos->escuela:'')}}">
+              <p class="text-green ">Nombre de tu escuela:</p>
+              <input type="text" class="form-control" id="Entrada_nombre_Escuela" placeholder="" value="{{((isset($datos->escuela))?$datos->escuela:'')}}">
              <br>
 
             <div class="form-group shadow-textarea">
-              <label for="exampleFormControlTextarea6" class="active">Cuentanos que te gusto de este libro:</label>
+              <label for="exampleFormControlTextarea6" class="active">Cuéntanos lo que más te gustó de este libro.</label>
               <br>
               <br>
-              <textarea class="form-control z-depth-1" id="Area_Texto_Comentario" rows="10" placeholder="Escribe tu comentario acerca de este libro...">{{((isset($datos->descripcion))?$datos->descripcion:'')}}</textarea>
+              <textarea class="form-control z-depth-1" id="Area_Texto_Comentario" rows="10" placeholder="">{{((isset($datos->descripcion))?$datos->descripcion:'')}}</textarea>
             </div>
-            <button type="button" class="btn btn-block btn-default" id="Boton_Aceptar_comentarios()" onclick="almacenarInformacion()">Aceptar</button>
+            <button type="button" class="btn btn-block btn-default" id="Boton_Aceptar_comentarios()" onclick="almacenarInformacion()">Guardar</button>
             </div>
           </div>
         </div>

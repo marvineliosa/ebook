@@ -26,17 +26,17 @@
           <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button></div> -->
       </div>
       <div class="box-body">
-        <div align='center'>
+        <div align=''>
           <!-- <img src="{{asset('paginas/p7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p7L.PNG')}}'" > -->
           <div class="login-box ">
             <div class="row">
               <div class="col-xs-10 col-md-10" style="background-color:white;">
                 <br>
                 <img src="{{asset('paginas/Tema_1_Actividad_1_firma_compromiso.PNG')}}" class="img-fluid" style="width:115%;">
-                <div class="form-group has-warning"><label class="control-label" for="inputWarning"><i class="fa"></i><h3>Ejemplo:</h3></label></div>
+                <div class="form-group has-warning"><label class="control-label" for="inputWarning"><i class="fa"></i><h3>Ejemplos:</h3></label></div>
 
                 <p>
-                  Me compremeto a leer todas las noches almenos 10 minutos antes de dormir.
+                  Me comprometo a leer todas las noches al menos 10 minutos antes de dormir.
                 </p>
                 <br>
                 <div class="row">
@@ -45,35 +45,39 @@
                   </div>
 
                   <div class="col-xs-10 col-md-10" style="background-color:white;">
-                    <input type="text" class="form-control" id="Entrada_nombre" placeholder="Pon tu nombre aqui..." value="{{((isset($datos->nombre))?$datos->nombre:'')}}">
+                    <input type="text" class="form-control" id="Entrada_nombre" placeholder="Escribe tu nombre aquí" value="{{((isset($datos->nombre))?$datos->nombre:'')}}">
                   </div>
                 </div>
                 <br>
                 <p>
-                  Me compremeto conmigo mismo a:
+                  me comprometo conmigo mismo a:
                 </p>
-                <input type="text" class="form-control" id="Entrada_Compromiso_individual" placeholder="Pon tu compromiso Individual aqui..." value="{{((isset($datos->compromiso))?$datos->compromiso:'')}}">
+                <input type="text" class="form-control" id="Entrada_Compromiso_individual" placeholder="Escribe tu compromiso individual aquí" value="{{((isset($datos->compromiso))?$datos->compromiso:'')}}">
                 <br>
                 <p>
                   Y con mi grupo a:
                 </p>
-                <input type="text" class="form-control" id="Entrada_Compromiso_Grupal" placeholder="Pon tu compromiso Grupal aqui..." value="{{((isset($datos->compromisogrupal))?$datos->compromisogrupal:'')}}">
+                <input type="text" class="form-control" id="Entrada_Compromiso_Grupal" placeholder="Escribe tu compromiso grupal aquí" value="{{((isset($datos->compromisogrupal))?$datos->compromisogrupal:'')}}">
                 <br>
                 <p class="text-center">
                   Me acabo de comprometer<br>¿Me ayudas a cumplir mi compromiso?
                 </p>
                 <br>
                 <div class="row">
-                  <div class="col-xs-6 col-md-6" style="background-color:white;">
+                  <div class="col-xs-12 col-md-12" style="background-color:white;">
                     <p class="text-green text-center">Yo:</p>
-                    <input type="text" class="form-control" id="Entrada_nombre_tutor_1" placeholder="Nombre de Papá" value="{{((isset($datos->ayuda1))?$datos->ayuda1:'')}}">
+                    <input type="text" class="form-control" id="Entrada_nombre_tutor_1" placeholder="Nombre del padre o tutor" value="{{((isset($datos->ayuda1))?$datos->ayuda1:'')}}">
                   </div>
 
-                  <div class="col-xs-6 col-md-6" style="background-color:white;">
+                  <!-- <div class="col-xs-6 col-md-6" style="background-color:white;">
                     <p class="text-green text-center">Yo:</p>
-                    <input type="text" class="form-control" id="Entrada_nombre_tutor_2" placeholder="Nombre de Mamá" value="{{((isset($datos->ayuda2))?$datos->ayuda2:'')}}">
-                  </div>
+                    <input type="text" class="form-control" id="Entrada_nombre_tutor_2" placeholder="Mamá" value="{{((isset($datos->ayuda2))?$datos->ayuda2:'')}}">
+                  </div> -->
                 </div>
+                <br>
+                <p class="text-center">
+                  me comprometo a apoyar el compromiso de mi hijo y a reunirme con mis familiares para platicar respecto a este tema.
+                </p>
                 <br>
                 <p class="text-center">
                       Otros familiares que quieran unirse a este compromiso:

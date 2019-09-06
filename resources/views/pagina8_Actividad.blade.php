@@ -32,20 +32,20 @@
               <img src="{{asset('paginas/Tema_1_Actividad_1_Instrucciones.PNG')}}" class="img-fluid" style="width:100%;">
               <br>
               <br>
-              <p class="text-left"> ¿Que aprendiste del cuento: <code class="text-yellow "><strong>El recado secreto 2</strong></code>?</p>
+              <p class="text-left"> ¿Qué aprendiste del cuento <code class="text-yellow "><strong>El recado secreto 2</strong></code>?</p>
               <br>
               <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
               <br>
-              <p class="text-left"> ¿Como te sientes con los <strong> Valores </strong>que aprendiste hoy?</p>
+              <p class="text-left"> ¿Cómo te sientes con los valores que aprendiste hoy?</p>
               <br>
               <input type="text text-center" class="form-control" align="center" id="Entrada_Valores_hoy" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta2))?$datos->respuesta2:'')}}">
               <br>
-              <p class="text-left"> Explica porque te sientes asi:</p>
+              <p class="text-left"> Explica por qué te sientes así:</p>
               <br>
               <input type="text text-center" class="form-control" align="center" id="Entrada_Como_me_siento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta3))?$datos->respuesta3:'')}}">
               <br>
               <br>
-              <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar Respuestas</button>
+              <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
 
             </div>
           </div>
