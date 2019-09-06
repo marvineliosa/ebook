@@ -5,10 +5,10 @@
 
   <!-- Content Header (Page header) -->
 
-  <section class="content-header">
-        <h1>Nombre de la página<small>Algún texto pequeño</small></h1>
+  <section class="content-header" align="center">
+        <!-- <h1>Nombre de la página<small>Algún texto pequeño</small></h1> -->
+        <h1>Para aprender</h1>
         <ol class="breadcrumb"><!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li><li><a href="#">Examples</a></li><li class="active">Blank page</li> --> </ol>
-        <button type="button" class="btn btn-default" disabled="true"><i class="fa fa-arrow-right"></i></button>
   </section>
 
   <!-- Main content -->
@@ -18,7 +18,7 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Título</h3>
+        <!-- <h3 class="box-title">Para aprender</h3> -->
 
         <!-- <div class="box-tools pull-right">
 
@@ -54,10 +54,10 @@
         <!-- /.box-body -->
 
         <div class="box-footer" align="center">
-          <div class="btn-group">
-            <button type="button" class="btn btn-default" onclick="anterior(7)"><i class="fa  fa-arrow-left"></i></button>
-            <button type="button" class="btn btn-default" onclick="siguiente(9)"><i class="fa fa-arrow-right"></i></button>
-          </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" onclick="anterior(7)"><i class="fa  fa-arrow-left"></i></button>
+          <button type="button" class="btn btn-default" onclick="siguiente(9)"><i class="fa fa-arrow-right"></i></button>
+        </div>
         </div>
 
         <!-- /.box-footer-->

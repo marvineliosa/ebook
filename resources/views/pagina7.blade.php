@@ -5,9 +5,9 @@
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
-  <h1>
+  <!-- <h1>
     Nombre de la página
-    <small>Algún texto pequeño</small>
+    <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
     <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -23,7 +23,7 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias Para Papás</button>
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">

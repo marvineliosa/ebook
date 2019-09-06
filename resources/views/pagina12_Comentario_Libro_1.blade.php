@@ -4,8 +4,8 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
-      <h1>Método ExE</h1>
+<section class="content-header" align="center">
+      <h1>Tu testimonio</h1>
       <ol class="breadcrumb"></ol>
 </section>
 

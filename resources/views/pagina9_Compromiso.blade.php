@@ -6,8 +6,8 @@
   <!-- Content Header (Page header) -->
 
   <section class="content-header">
-    <h1>Nombre de la página<small>Algún texto pequeño</small></h1>
-    <ol class="breadcrumb"><!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li><li><a href="#">Examples</a></li><li class="active">Blank page</li> --> </ol>
+    <!-- <h1>Nombre de la página<small>Algún texto pequeño</small></h1>
+    <ol class="breadcrumb"><li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li><li><a href="#">Examples</a></li><li class="active">Blank page</li> </ol> -->
   </section>
 
   <!-- Main content -->
@@ -17,7 +17,7 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias Para Papás</button>
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
         <!-- <h3 class="box-title">Título</h3> -->
 
         <!-- <div class="box-tools pull-right">

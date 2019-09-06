@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header" align="center">
   <h1>
     Guía de Maestros
     <!-- <small>Algún texto pequeño</small> -->

@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias Para Papás</button>
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
       <br>
       <h3 class="box-title"><audio id="audio" controls>
