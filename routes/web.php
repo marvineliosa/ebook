@@ -38,6 +38,7 @@ Route::get('/pagina/4', function (){return view('pagina4');});
 Route::get('/pagina/5', function (){return view('pagina5');});
 Route::get('/pagina/6', function (){return view('pagina6');});
 Route::get('/pagina/7', function (){return view('pagina7');});
+Route::get('/nahuatl', function (){return view('audio_nahuatl');});
 
 //Route::get('/pagina/Tema_1_Actividad', function (){return view('pagina8_Actividad');});
 Route::get('/pagina/Tema_1_Actividad', 'PaginasController@Pagina8');
