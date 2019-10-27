@@ -4,10 +4,46 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
+<script type="text/javascript">
+
+  var Capitulo = 8;
+  var pagina_actual = 64;
+
+
+  function carga_ejemplo(pagina)
+     {
+       alert("pagina: "+pagina_actual);
+     }
+
+     function datos()
+        {
+          var element = document.getElementById('myImg');
+          var element2 = document.getElementById('myImg2');
+
+          var elemento_imagen = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG";
+          var elemento_imagen_zoom = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG'";
+
+
+          element.src = elemento_imagen;
+          element.src = elemento_imagen;
+
+          element.zoomImage = elemento_imagen_zoom ;
+
+
+          document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+          //document.getElementById('myImg').zoomImage = elemento_imagen_zoom;
+          //console.log(Object.values(document.getElementById('myImg')));
+        }
+
+
+
+
+
+</script>
+
 <section class="content-header">
-  <!-- <h1>
+   <h1 id= "titulo">
     Nombre de la página
-    <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
     <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -24,6 +60,11 @@
   <div class="box">
     <div class="box-header with-border" align="center">
       <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <br>
+      <br>
+      <audio id="audio" controls="">
+                <source type="audio/wav" src="http://127.0.0.1:8000/audio/Parte 1.wav">
+              </audio>
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
@@ -34,14 +75,15 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/p7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p7L.PNG')}}'"  style="max-width: 100%">
-      </div>
-    </div>
+        <img id="myImg" src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+
+       </div> <script type="text/javascript"> datos(); </script> </div>
+
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" onclick="anterior(6)"><i class="fa  fa-arrow-left"></i></button>
-        <button type="button" class="btn btn-default" onclick="siguiente(8)"><i class="fa fa-arrow-right"></i></button>
+        <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
     <!-- /.box-footer-->
@@ -63,7 +105,7 @@
       </div>
       <div class="modal-body">
         <div align='center'>
-          <img src="{{asset('padres/Padres_7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+          <img  id="myImg2" src="{{asset('padres/Padres_7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -77,14 +119,15 @@
 @section('script')
 <script type="text/javascript">
   JetZoom.quickStart();
-    function siguiente(pagina)
+    function siguiente()
        {
-         location.href = '/pagina/Tema_1_Actividad';
+
+         location.href = "/Libro_5_Capitulo_"+Capitulo+"_Pagina_"+(pagina_actual+1);
          //alert("adelante");
        }
-     function anterior(pagina)
+     function anterior()
         {
-          location.href = '/pagina/'+pagina;
+          location.href = "/Libro_5_Capitulo_"+Capitulo+"_Pagina_"+(pagina_actual-1);
           //alert("atras");
         }
 </script>

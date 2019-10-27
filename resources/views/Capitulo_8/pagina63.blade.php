@@ -18,15 +18,21 @@
      function datos()
         {
           var element = document.getElementById('myImg');
+          var element2 = document.getElementById('myImg2');
 
           var elemento_imagen = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG";
           var elemento_imagen_zoom = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG'";
 
 
           element.src = elemento_imagen;
+          element.src = elemento_imagen;
+
           element.zoomImage = elemento_imagen_zoom ;
+
+
+          document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
           //document.getElementById('myImg').zoomImage = elemento_imagen_zoom;
-          console.log(Object.values(document.getElementById('myImg')));
+          //console.log(Object.values(document.getElementById('myImg')));
         }
 
 
@@ -36,9 +42,8 @@
 </script>
 
 <section class="content-header">
-  <!-- <h1>
+   <h1 id= "titulo">
     Nombre de la página
-    <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
     <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -55,6 +60,11 @@
   <div class="box">
     <div class="box-header with-border" align="center">
       <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <br>
+      <br>
+      <audio id="audio" controls="">
+                <source type="audio/wav" src="http://127.0.0.1:8000/audio/Parte 1.wav">
+              </audio>
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
@@ -95,7 +105,7 @@
       </div>
       <div class="modal-body">
         <div align='center'>
-          <img src="{{asset('padres/Padres_7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+          <img  id="myImg2" src="{{asset('padres/Padres_7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -117,6 +127,7 @@
        }
      function anterior()
         {
+          Capitulo = Capitulo - 1;
           location.href = "/Libro_5_Capitulo_"+Capitulo+"_Pagina_"+(pagina_actual-1);
           //alert("atras");
         }

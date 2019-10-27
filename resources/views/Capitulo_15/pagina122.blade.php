@@ -6,8 +6,8 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 8;
-  var pagina_actual = 67;
+  var Capitulo = 15;
+  var pagina_actual = 122;
 
 
   function carga_ejemplo(pagina)
@@ -122,6 +122,7 @@
     function siguiente()
        {
 
+         Capitulo = Capitulo + 1 ;
          location.href = "/Libro_5_Capitulo_"+Capitulo+"_Pagina_"+(pagina_actual+1);
          //alert("adelante");
        }

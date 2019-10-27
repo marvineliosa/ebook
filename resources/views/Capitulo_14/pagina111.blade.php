@@ -6,8 +6,8 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 8;
-  var pagina_actual = 67;
+  var Capitulo = 14;
+  var pagina_actual = 111;
 
 
   function carga_ejemplo(pagina)
