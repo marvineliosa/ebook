@@ -29,6 +29,7 @@
              element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
         }
 
+
 </script>
 
 <section class="content-header">
@@ -52,9 +53,7 @@
       <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
       <br>
-      <audio id="audio" controls="">
-                <source type="audio/wav" src="http://127.0.0.1:8000/audio/Parte 1.wav">
-              </audio>
+
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
@@ -68,6 +67,7 @@
         <img id="myImg" src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
 
        </div> <script type="text/javascript"> datos(); </script> </div>
+     </div> <script type="text/javascript"> audio(); </script> </div>
 
     <!-- /.box-body -->
     <div class="box-footer" align="center">
