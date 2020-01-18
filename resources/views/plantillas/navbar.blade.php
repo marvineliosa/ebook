@@ -21,7 +21,7 @@
         <li class="header">MENÚ</li>
 
         <!-- Maestros -->
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>Maestros</span>
             <span class="pull-right-container">
@@ -29,10 +29,37 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <!-- <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Libros</a></li> -->
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Libros</a></li>
             <li><a href="/pagina/1"><i class="fa fa-circle-o"></i> Libros</a></li>
             <li><a href="/pagina/Guia_Maestro"><i class="fa fa-circle-o"></i> Guía de Maestros</a></li>
             <li><a href="/pagina/Guia_Maestro_Metodo"><i class="fa fa-circle-o"></i> Método ExE</a></li>
+          </ul>
+        </li>
+         -->
+        <!-- Maestros -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Catálogo</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <!-- <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Libros</a></li> -->
+            <li><a href="/pagina/1"><i class="fa fa-circle-o"></i> Libros</a></li>
+          </ul>
+        </li>
+        <!-- Maestros -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Usuarios</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <!-- <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Libros</a></li> -->
+            <li><a href="/pagina/1"><i class="fa fa-circle-o"></i> Gestión de usuarios</a></li>
           </ul>
         </li>
 

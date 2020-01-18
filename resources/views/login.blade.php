@@ -31,7 +31,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <div class="login-box">
     <div class="login-logo">
-      <a href="../../index2.html"><b>eBooks</b></a>
+      <a href="../../index2.html"><b><h1>Plataforma EXE </h1></b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
