@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    "Compromiso ante la familia"
+    "El alcoholismo en la adolescencia: un peligro"
     <!-- <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
       <br>
       <br>
     <!--  <h3 class="box-title"><audio id="audio" controls>
@@ -39,14 +39,14 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_2/2017PUE_PRIM_25.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_2/2017PUE_PRIM_25.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <img src="{{$ruta}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{$ruta}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" onclick="siguiente(24)"><i class="fa  fa-arrow-left"></i></button>
-        <button type="button" class="btn btn-default" onclick="siguiente(26)"><i class="fa fa-arrow-right"></i></button>
+        <button type="button" class="btn btn-default" onclick="anterior({{$pagina-1}})"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="siguiente({{$pagina+1}})"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
     <!-- /.box-footer-->
@@ -69,9 +69,7 @@
       <div class="modal-body">
 
         <div align='center'>
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_27.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_27.jpg')}}'"  style="max-width: 100%">
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_28.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_28.jpg')}}'"  style="max-width: 100%">
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_29.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_29.jpg')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -84,17 +82,20 @@
 
 @section('script')
   <script type="text/javascript">
+    var ant_capitulo = 20;
+    var sig_capitulo = 21;
+    var libro = 1;
     function siguiente(pagina)
        {
-        location.href = pagina;
+        // location.href = '/'+ libro + '/' + sig_capitulo+ '/' +pagina;
+        location.href = '/ingles/' +pagina;
          //alert("adelante");
        }
-     function anterior()
+     function anterior(pagina)
         {
-          //window.location.replace('http://localhost:8000/1/Leopiensoyescribo/23');
+          location.href = '/ingles/' +pagina;
           //alert("atras");
-        }
-  </script>
+        }  </script>
   <!-- script zoom con jetzoom-->
   <script type="text/javascript">
    JetZoom.quickStart();

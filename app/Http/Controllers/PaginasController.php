@@ -17,7 +17,17 @@
          */
 
         public function PaginaIngles($pagina){
-            
+            $ruta = '';
+            if($pagina < 10){
+                $ruta = '../libro_ingles/000'.$pagina.'.jpg';
+            }else if($pagina > 9 && $pagina < 100){
+                $ruta = '../libro_ingles/00'.$pagina.'.jpg';
+            }else{
+                $ruta = '../libro_ingles/0'.$pagina.'.jpg';
+            }
+
+            // dd($ruta);
+            return view('ingles.pagina_ingles')->with(["ruta"=>$ruta,'pagina'=>$pagina]);
         }
 
         public function PaginaComentarios(Request $request){
