@@ -22,9 +22,9 @@
                 ->where('user',$usuario)
                 ->get();
             $select = array(
-                        'edad' => null, 
-                        'sexo' => null, 
-                        'grado' => null, 
+                        'edad' => null,
+                        'sexo' => null,
+                        'grado' => null,
                         'estado' => null
                     );
             if(count($datos)>0){
@@ -204,5 +204,134 @@
             echo json_encode($data);//*/
 
         }
+//*************************************************************************************************************
+
+//Capitulo 8
+
+        public function Pagina66(Request $request)
+            {
+                $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+
+                $datos = DB::table('table_resp_ac1')
+                            ->where('user',$usuario)
+                            ->get();
+
+                if(count($datos)>0)
+                    {
+                        $datos = $datos[0];
+                    }
+
+                return view('Capitulo_8/pagina66')->with(["datos"=>$datos]);
+            }
+
+        public function AlmacenarPagina66(Request $request)
+            {
+                date_default_timezone_set('America/Mexico_City');
+
+                $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+                $tipo = null;
+
+                $existe = DB::table('table_resp_ac1')
+                            ->where('user',$usuario)
+                            ->get();
+
+                if(count($existe)>0)
+                    {
+                        $tipo = 'update';
+
+                        DB::table('table_resp_ac1')
+                            ->where('user', $usuario)
+                            ->update([
+                                        'respuesta1' => $request['respuesta1'],
+                                        'respuesta2' => $request['respuesta2'],
+                                        'respuesta3' => $request['respuesta3'],
+                                        'updated_at' => date('Y-m-d H:i:s')
+                                     ]);
+                    }
+                else
+                    {
+                        $tipo = 'insert';
+                        DB::table('table_resp_ac1')
+                            ->insert(
+                                        [
+                                            'respuesta1' => $request['respuesta1'],
+                                            'respuesta2' => $request['respuesta2'],
+                                            'respuesta3' => $request['respuesta3'],
+                                            'user' => $usuario,
+                                            'created_at' => date('Y-m-d H:i:s')
+                                        ]
+                                    );
+                    }
+                $data = array
+                              (
+                                  "exito" => $tipo
+                              );
+
+                echo json_encode($data);//*/
+
+            }
+
+                      public function pagina67(Request $request)
+                        {
+                            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+
+                            $datos = DB::table('table_resp_ac1')
+                                        ->where('user',$usuario)
+                                        ->get();
+
+                            if(count($datos)>0)
+                                {
+                                    $datos = $datos[0];
+                                }
+
+                            return view('Capitulo_8/pagina67')->with(["datos"=>$datos]);
+                        }
+
+                      public function Almacenarpagina67(Request $request)
+                        {
+                            date_default_timezone_set('America/Mexico_City');
+
+                            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+                            $tipo = null;
+
+                            $existe = DB::table('table_resp_ac1')
+                                        ->where('user',$usuario)
+                                        ->get();
+
+                            if(count($existe)>0)
+                                {
+                                    $tipo = 'update';
+
+                                    DB::table('table_resp_ac1')
+                                        ->where('user', $usuario)
+                                        ->update([
+                                                    'respuesta1' => $request['respuesta1'],
+                                                    'respuesta2' => $request['respuesta2'],
+                                                    'respuesta3' => $request['respuesta3'],
+                                                    'updated_at' => date('Y-m-d H:i:s')
+                                                 ]);
+                                }
+                            else
+                                {
+                                    $tipo = 'insert';
+                                    DB::table('table_resp_ac1')
+                                        ->insert(
+                                                    [
+                                                        'respuesta1' => $request['respuesta1'],
+                                                        'respuesta2' => $request['respuesta2'],
+                                                        'respuesta3' => $request['respuesta3'],
+                                                        'user' => $usuario,
+                                                        'created_at' => date('Y-m-d H:i:s')
+                                                    ]
+                                                );
+                                }
+                            $data = array
+                                          (
+                                              "exito" => $tipo
+                                          );
+
+                            echo json_encode($data);//*/
+
+                        }
 
     }
