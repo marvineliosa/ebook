@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Moraleja
+    "Leo, pienso y escribo 5°"
     <!-- <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
@@ -21,31 +21,31 @@
 
   <!-- Default box -->
   <div class="box">
-    <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <div class="box-header with-border" align="center">
+      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
       <br>
       <br>
-      <h3 class="box-title"><audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/Parte 5.wav')}}">
-        </audio></h3>
+  <!--<h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/Primpag5.mp3')}}">
+        </audio></h3>-->
 
-      <!-- <div class="box-tools pull-right">
+      <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
           <i class="fa fa-minus"></i></button>
         <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
           <i class="fa fa-times"></i></button>
-      </div> -->
+      </div>
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/p6.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p6L.PNG')}}'"  style="max-width: 100%">
+        <img src="{{asset('paginas/2017PUE_PRIM_6.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/2017PUE_PRIM_6.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" onclick="anterior(5)"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="siguiente(5)"><i class="fa  fa-arrow-left"></i></button>
         <button type="button" class="btn btn-default" onclick="siguiente(7)"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
@@ -55,7 +55,6 @@
 
 </section>
 <!-- /.content -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="ModalPadres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,9 +67,9 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
         <div align='center'>
-          <img src="{{asset('padres/Padres_6.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_6.PNG')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -82,17 +81,20 @@
 @endsection
 
 @section('script')
-<script type="text/javascript">
-    JetZoom.quickStart();
+  <script type="text/javascript">
     function siguiente(pagina)
        {
-         location.href = '/pagina/'+pagina;
+        location.href = pagina;
          //alert("adelante");
        }
-     function anterior(pagina)
+     function anterior()
         {
-          location.href = '/pagina/'+pagina;
+            location.href = pagina;
           //alert("atras");
         }
-</script>
+  </script>
+  <!-- script zoom con jetzoom-->
+  <script type="text/javascript">
+   JetZoom.quickStart();
+  </script>
 @endsection
