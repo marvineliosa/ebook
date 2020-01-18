@@ -51,10 +51,7 @@
     <div class="box-header with-border" align="center">
       <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
-      <br>
-      <audio id="audio" controls="">
-                <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_11/Pag .mp3">
-              </audio>
+      
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
