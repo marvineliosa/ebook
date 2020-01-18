@@ -9,7 +9,6 @@
   var Capitulo = 10;
   var pagina_actual = 81;
 
-
   function carga_ejemplo(pagina)
      {
        alert("pagina: "+pagina_actual);
@@ -17,27 +16,17 @@
 
      function datos()
         {
-          var element = document.getElementById('myImg');
-          var element2 = document.getElementById('myImg2');
-
-          var elemento_imagen = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG";
-          var elemento_imagen_zoom = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG'";
-
-
-          element.src = elemento_imagen;
-          element.src = elemento_imagen;
-
-          element.zoomImage = elemento_imagen_zoom ;
-
-
-          document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
-          //document.getElementById('myImg').zoomImage = elemento_imagen_zoom;
-          //console.log(Object.values(document.getElementById('myImg')));
+            var element = document.getElementById('myImg');
+            element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG";
+            element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG'";
+            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
         }
-
-
-
-
+    function datos2()
+        {
+             var element2 = document.getElementById('myImg2');
+             element2.src = "{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg";
+             element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
+        }
 
 </script>
 
@@ -105,9 +94,11 @@
       </div>
       <div class="modal-body">
         <div align='center'>
-          <img  id="myImg2" src="{{asset('padres/Padres_7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+
         </div>
       </div>
+    </div> <script type="text/javascript"> datos2(); </script> </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
@@ -119,16 +110,25 @@
 @section('script')
 <script type="text/javascript">
   JetZoom.quickStart();
-    function siguiente()
-       {
+  function siguiente()
+     {
 
-         location.href = "/Libro_5_Capitulo_"+Capitulo+"_Pagina_"+(pagina_actual+1);
-         //alert("adelante");
-       }
-     function anterior()
-        {
-          location.href = "/Libro_5_Capitulo_"+Capitulo+"_Pagina_"+(pagina_actual-1);
-          //alert("atras");
-        }
+
+       if( pagina_actual == 69  || pagina_actual == 78  || pagina_actual == 85 || pagina_actual == 92 || pagina_actual == 100 || pagina_actual == 107 || pagina_actual == 114 || pagina_actual == 122)
+         {
+           Capitulo =  Capitulo + 1;
+         }
+       location.href = "/5/"+Capitulo+"/"+(pagina_actual+1);
+
+     }
+   function anterior()
+      {
+        if( pagina_actual == 63  || pagina_actual == 70 || pagina_actual == 79 || pagina_actual == 86 || pagina_actual == 93 || pagina_actual == 101 || pagina_actual == 108 || pagina_actual == 115)
+          {
+            Capitulo = Capitulo - 1;
+          }
+        location.href = "/5/"+Capitulo+"/"+(pagina_actual-1);
+        //alert("atras");
+      }
 </script>
 @endsection
