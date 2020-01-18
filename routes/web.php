@@ -65,7 +65,9 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/Libro_5_Capitulo_8_Pagina_63', function (){return view('Capitulo_8/pagina63');});
             Route::get('/Libro_5_Capitulo_8_Pagina_64', function (){return view('Capitulo_8/pagina64');});
             Route::get('/Libro_5_Capitulo_8_Pagina_65', function (){return view('Capitulo_8/pagina65');});
-            Route::get('/Libro_5_Capitulo_8_Pagina_66', function (){return view('Capitulo_8/pagina66');});
+
+            Route::get('/Libro_5_Capitulo_8_Pagina_66', 'PaginasController@Pagina66');
+            
             Route::get('/Libro_5_Capitulo_8_Pagina_67', function (){return view('Capitulo_8/pagina67');});
             Route::get('/Libro_5_Capitulo_8_Pagina_68', function (){return view('Capitulo_8/pagina68');});
             Route::get('/Libro_5_Capitulo_8_Pagina_69', function (){return view('Capitulo_8/pagina69');});

@@ -76,6 +76,18 @@
     <div class="box-body">
       <div align='center'>
         <img id="myImg" src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+        <div class="login-box ">
+          <p class="text-left"><code class="text-red "><strong>Anota tras consecuencias negativas </strong></code></p>
+          <br>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+
+          <br>
+          <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+
+        </div>
+
+
 
        </div> <script type="text/javascript"> datos(); </script> </div>
 
