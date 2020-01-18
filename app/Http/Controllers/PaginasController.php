@@ -16,6 +16,10 @@
          * @return Response
          */
 
+        public function PaginaIngles($pagina){
+            
+        }
+
         public function PaginaComentarios(Request $request){
             $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
             $datos = DB::table('table_resp_encuesta')

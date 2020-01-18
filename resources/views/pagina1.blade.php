@@ -27,7 +27,7 @@
       <br>
     <h3 class="box-title"><audio id="audio" controls>
           <source type="audio/wav" src="{{asset('audio/Primpag5.mp3')}}">
-        </audio></h3>-->
+        </audio></h3>
 
       <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
