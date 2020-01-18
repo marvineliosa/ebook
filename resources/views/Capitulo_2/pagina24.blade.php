@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
       <br>
     <!--  <h3 class="box-title"><audio id="audio" controls>
@@ -69,7 +69,7 @@
       <div class="modal-body">
 
         <div align='center'>
-          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_26.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_26.jpg')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">

@@ -31,7 +31,7 @@ Route::get('/pagina/{numero}', function () {
     return view('pagina');
 });//*/
 
-Route::get('/pag1ina/1', function (){return view('pagina');});
+Route::get('/pagina/1', function (){return view('pagina');});
 Route::get('/pagina/21', function (){return view('pagina22');});
 Route::get('/pagina/31', function (){return view('pagina33');});
 Route::get('/pagina/4', function (){return view('pagina44');});

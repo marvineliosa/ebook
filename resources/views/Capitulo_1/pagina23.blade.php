@@ -6,6 +6,7 @@
   <!-- Content Header (Page header) -->
 
   <section class="content-header">
+    <h1>Leo, pienso y escribo</h1>
     <!-- <h1>Nombre de la página<small>Algún texto pequeño</small></h1>
     <ol class="breadcrumb"><li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li><li><a href="#">Examples</a></li><li class="active">Blank page</li> </ol> -->
   </section>
@@ -17,14 +18,21 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
-        <!-- <h3 class="box-title">Título</h3> -->
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <br>
+      <br>
+      <!-- <h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/Parte 0.wav')}}">
+        </audio></h3>
 
-        <!-- <div class="box-tools pull-right">
-
-          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button></div> -->
-      </div>
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                title="Collapse">
+          <i class="fa fa-minus"></i></button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+          <i class="fa fa-times"></i></button>
+      </div> -->
+    </div>
       <div class="box-body">
         <div align=''>
           <!-- <img src="{{asset('paginas/p7.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p7L.PNG')}}'" > -->
@@ -122,10 +130,8 @@
       <div class="modal-body">
 
         <div align='center'>
-          <img src="{{asset('padres/Padres_9.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_9.PNG')}}'"  style="max-width: 100%">
-        </div>
-        <div align='center'>
-          <img src="{{asset('padres/Padres_9-2.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_9.PNG')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Capitulo1/2017PUE_PRIM_FAM_5_24.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo1/2017PUE_PRIM_FAM_5_24.jpg')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Capitulo1/2017PUE_PRIM_FAM_5_25.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo1/2017PUE_PRIM_FAM_5_25.jpg')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
