@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Página 2
+    "Leo, pienso y escribo 5°"
     <!-- <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">
@@ -22,34 +22,30 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
       <br>
       <br>
-      <h3 class="box-title"><audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/Parte 1.wav')}}">
-        </audio></h3>
+    <!--<h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/Primpag5.mp3')}}">
+        </audio></h3>-->
 
-      <!-- <div class="box-tools pull-right">
+      <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
           <i class="fa fa-minus"></i></button>
         <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
           <i class="fa fa-times"></i></button>
-      </div> -->
+      </div>
     </div>
     <div class="box-body">
-      <div align='center' id="zoomdiv">
-        <!--<img src="{{asset('paginas/p2.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/p1L.PNG')}}'" > -->
-        <!-- <audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/recado_secreto.wav')}}">
-        </audio> -->
-        <span class='zoom' id='ex1'><img src="{{asset('paginas/p2.PNG')}}" id='jack' alt='Daisy on the Ohoopee'/> <!-- LINEA TRABAJA CON JQUERYZOOM -->
+      <div align='center'>
+        <img src="{{asset('paginas/2017PUE_PRIM_2.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/2017PUE_PRIM_2.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" onclick="anterior(1)"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="siguiente(1)"><i class="fa  fa-arrow-left"></i></button>
         <button type="button" class="btn btn-default" onclick="siguiente(3)"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
@@ -71,12 +67,9 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
         <div align='center'>
-          <img src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_1.PNG')}}'"  style="max-width: 100%">
-        </div>
-        <div align='center'>
-          <img src="{{asset('padres/Padres_1-2.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_1.PNG')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -88,21 +81,20 @@
 @endsection
 
 @section('script')
-<script type="text/javascript">
+  <script type="text/javascript">
     function siguiente(pagina)
        {
-         location.href = '/pagina/'+pagina;
+        location.href = pagina;
          //alert("adelante");
        }
-     function anterior(pagina)
+     function anterior()
         {
-          location.href = '/pagina/'+pagina;
+            location.href = pagina;
           //alert("atras");
         }
-
-        $(document).ready(function () {
-          $('#zoomdiv').zoom({magnify:1.3}); //linea trabaja con jqueryzomm
-        
-        })
-</script>
+  </script>
+  <!-- script zoom con jetzoom-->
+  <script type="text/javascript">
+   JetZoom.quickStart();
+  </script>
 @endsection
