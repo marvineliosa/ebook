@@ -18,8 +18,8 @@
      function datos()
         {
             var element = document.getElementById('myImg');
-            element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG";
-            element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".PNG'";
+            element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
+            element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
             document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
         }
     function datos2()
@@ -51,7 +51,7 @@
     <div class="box-header with-border" align="center">
       <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
-      
+
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
@@ -62,7 +62,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img id="myImg" src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
 
        </div> <script type="text/javascript"> datos(); </script> </div>
 
@@ -92,7 +92,7 @@
       </div>
       <div class="modal-body">
         <div align='center'>
-          <img id="myImg2" src="{{asset('padres/Padres_1.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.PNG')}}'"  style="max-width: 100%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
 
         </div>
       </div>
