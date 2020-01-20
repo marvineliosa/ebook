@@ -148,7 +148,7 @@ function siguiente()
        {
          Capitulo =  Capitulo + 1;
        }
-     location.href = "/5/"+Capitulo+"/"+(pagina_actual+1);
+     location.href = "/1/"+Capitulo+"/"+(pagina_actual+1);
 
    }
  function anterior()
@@ -157,7 +157,7 @@ function siguiente()
         {
           Capitulo = Capitulo - 1;
         }
-      location.href = "/5/"+Capitulo+"/"+(pagina_actual-1);
+      location.href = "/1/"+Capitulo+"/"+(pagina_actual-1);
       //alert("atras");
     }
 function Agrega_respuestas()
