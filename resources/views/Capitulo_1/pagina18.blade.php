@@ -39,7 +39,23 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_1/2017PUE_PRIM_18.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_1/2017PUE_PRIM_18.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box">
+          <img src="{{asset('paginas/Capitulo1/recortes/2017PUE_PRIM_22.JPG')}}" class="img-fluid jetzoom" data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo1/recortes/2017PUE_PRIM_22.JPG')}}'"  style="max-width: 100%">
+          <br>
+          <br>
+          <p class="text-left"> Menciona algo que hayas aprendido sobre <code class="text-purple "><strong>Leo, pienso y escribo 5°</strong></code>y explicalo con tus propias palabras:</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"> ¿Cómo te sientes con el valor que aprendiste hoy? Explicanos</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"><code class="text-purple "><strong>Conclusiones</strong></code></p>
+          <p class="text-left">Anota dos conclusiones importantes a las que llegó el grupo</p>
+          <p><class="text-left"> <textarea name="mensaje" placeholder="" rows="5" cols="50"></textarea></p>
+          <br>
+          <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+
+        </div>
       </div>
     </div>
     <!-- /.box-body -->

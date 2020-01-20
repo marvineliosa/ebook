@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
       <br>
       <br>
     <!--  <h3 class="box-title"><audio id="audio" controls>
@@ -39,7 +39,22 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_2/2017PUE_PRIM_25.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_2/2017PUE_PRIM_25.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box">
+          <img src="{{asset('paginas/Capitulo2/recortes/2017PUE_PRIM_29.JPG')}}" class="img-fluid jetzoom" data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo2/recortes/2017PUE_PRIM_29.JPG')}}'"  style="max-width: 100%">
+          <br>
+          <br>
+          <p class="text-left"> Menciona algo que hayas aprendido sobre <code class="text-orange"><strong>Compromiso con la familia</strong></code>y explicalo con tus propias palabras:</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"> ¿Cómo te sientes con el valor que aprendiste hoy? Explicanos</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"><code class="text-blue"><strong>Conclusiones</strong></code></p>
+          <p class="text-left">Anota dos conclusiones importantes a las que llegó el grupo</p>
+          <p><class="text-left"> <textarea name="mensaje" placeholder="" rows="5" cols="50"></textarea></p>
+          <br>
+          <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+        </div>
       </div>
     </div>
     <!-- /.box-body -->
@@ -61,17 +76,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
         <div align='center'>
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_27.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_27.jpg')}}'"  style="max-width: 100%">
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_28.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_28.jpg')}}'"  style="max-width: 100%">
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_29.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_29.jpg')}}'"  style="max-width: 100%">
+
         </div>
       </div>
       <div class="modal-footer">
