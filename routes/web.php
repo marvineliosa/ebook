@@ -158,7 +158,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             //Route::get('/5/8/66', function (){return view('Capitulo_8/pagina66');});
             //Route::get('/5/8/67', function (){return view('Capitulo_8/pagina67');});
 
-            Route::get('/5/8/68', function (){return view('Capitulo_8/pagina68');});
+            //Route::get('/5/8/68', function (){return view('Capitulo_8/pagina68');});
             Route::get('/5/8/69', function (){return view('Capitulo_8/pagina69');});
 
     //Capitulo 9
@@ -169,7 +169,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/9/74', function (){return view('Capitulo_9/pagina74');});
             //Route::get('/5/9/75', function (){return view('Capitulo_9/pagina75');});
             //Route::get('/5/9/76', function (){return view('Capitulo_9/pagina76');});
-            Route::get('/5/9/77', function (){return view('Capitulo_9/pagina77');});
+            //Route::get('/5/9/77', function (){return view('Capitulo_9/pagina77');});
             Route::get('/5/9/78', function (){return view('Capitulo_9/pagina78');});
 
     //Capitulo 10
@@ -178,7 +178,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/10/81', function (){return view('Capitulo_10/pagina81');});
             //Route::get('/5/10/82', function (){return view('Capitulo_10/pagina82');});
             //Route::get('/5/10/83', function (){return view('Capitulo_10/pagina83');});
-            Route::get('/5/10/84', function (){return view('Capitulo_10/pagina84');});
+            //Route::get('/5/10/84', function (){return view('Capitulo_10/pagina84');});
             Route::get('/5/10/85', function (){return view('Capitulo_10/pagina85');});
 
     //Capitulo 11
@@ -188,7 +188,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/11/88', function (){return view('Capitulo_11/pagina88');});
             //Route::get('/5/11/89', function (){return view('Capitulo_11/pagina89');});
             //Route::get('/5/11/90', function (){return view('Capitulo_11/pagina90');});
-            Route::get('/5/11/91', function (){return view('Capitulo_11/pagina91');});
+            //Route::get('/5/11/91', function (){return view('Capitulo_11/pagina91');});
             Route::get('/5/11/92', function (){return view('Capitulo_11/pagina92');});
 
     //Capitulo 12
@@ -199,7 +199,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/12/96', function (){return view('Capitulo_12/pagina96');});
             //Route::get('/5/12/97', function (){return view('Capitulo_12/pagina97');});
             //Route::get('/5/12/98', function (){return view('Capitulo_12/pagina98');});
-            Route::get('/5/12/99', function (){return view('Capitulo_12/pagina99');});
+            //Route::get('/5/12/99', function (){return view('Capitulo_12/pagina99');});
             Route::get('/5/12/100', function (){return view('Capitulo_12/pagina100');});
 
    //Capitulo 13
@@ -209,7 +209,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/13/103', function (){return view('Capitulo_13/pagina103');});
             //Route::get('/5/13/104', function (){return view('Capitulo_13/pagina104');});
             //Route::get('/5/13/105', function (){return view('Capitulo_13/pagina105');});
-            Route::get('/5/13/106', function (){return view('Capitulo_13/pagina106');});
+            //Route::get('/5/13/106', function (){return view('Capitulo_13/pagina106');});
             Route::get('/5/13/107', function (){return view('Capitulo_13/pagina107');});
 
   //Capitulo 14
@@ -219,7 +219,7 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/14/110', function (){return view('Capitulo_14/pagina110');});
             //Route::get('/5/14/111', function (){return view('Capitulo_14/pagina111');});
             //Route::get('/5/14/112', function (){return view('Capitulo_14/pagina112');});
-            Route::get('/5/14/113', function (){return view('Capitulo_14/pagina113');});
+            //Route::get('/5/14/113', function (){return view('Capitulo_14/pagina113');});
             Route::get('/5/14/114', function (){return view('Capitulo_14/pagina114');});
 
   //Capitulo 15
@@ -230,21 +230,18 @@ Route::post('/almacenar/pagina-comentarios', 'PaginasController@AlmacenarPaginaC
             Route::get('/5/15/118', function (){return view('Capitulo_15/pagina118');});
             //Route::get('/5/15/119', function (){return view('Capitulo_15/pagina119');});
             //Route::get('/5/15/120', function (){return view('Capitulo_15/pagina120');});
-            Route::get('/5/15/121', function (){return view('Capitulo_15/pagina121');});
+            //Route::get('/5/15/121', function (){return view('Capitulo_15/pagina121');});
             Route::get('/5/15/122', function (){return view('Capitulo_15/pagina122');});
 
 // Capitulos 8 al 15 *******************************************************************************************************
-
-  //Route::get('/p','PaginasController@Obtener_Comentarios_nega');
-    //["unidad" => 8,"pagina" => 66]
-    //Route::get('/p/','PaginasController@Obtener_Comentarios_nega');
-
 
     Route::get('/5/{capitulo}/{pagina}/','PaginasController@Obtener_Comentarios');
 
 
     Route::post('/almacenar/Almacenar_Comentarios_Neg', 'PaginasController@Almacenar_Comentario_neg');
     Route::post('/almacenar/Almacenar_Comentarios_Pos', 'PaginasController@Almacenar_Comentario_pos');
+
+    Route::post('/almacenar/Respuestas_opinion', 'PaginasController@Almacenar_Opinion');
 
 
 
