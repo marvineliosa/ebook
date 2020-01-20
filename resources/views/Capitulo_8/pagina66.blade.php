@@ -9,7 +9,6 @@
   var Capitulo = 8;
   var pagina_actual = 66;
 
-
   function carga_ejemplo(pagina)
      {
        alert("pagina: "+pagina_actual);
@@ -17,10 +16,18 @@
 
      function datos()
         {
+
+
             var element = document.getElementById('myImg');
             element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
             element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
             document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+
+            var element_imagen_uni = document.getElementById('imagen_uni');
+            element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+"_2.jpg";
+
+
+
         }
     function datos2()
         {
@@ -29,9 +36,9 @@
              element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
         }
 
-</script>
+  </script>
 
-<section class="content-header">
+  <section class="content-header">
    <h1 id= "titulo">
     Nombre de la página
   </h1>
@@ -41,31 +48,49 @@
     <li class="active">Blank page</li> -->
 
   </ol>
-</section>
+  </section>
 
-<!-- Main content -->
-<section class="content">
+  <!-- Main content -->
+  <section class="content">
 
   <!-- Default box -->
   <div class="box">
-    <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
-      <br>
-
-      <!-- <div class="box-tools pull-right">
-        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                title="Collapse">
-          <i class="fa fa-minus"></i></button>
-        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fa fa-times"></i></button>
-      </div> -->
-    </div>
+    <div class="box-header with-border" align="center"><button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br></div>
     <div class="box-body">
-      <div align='center'>
-        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+          <div align='center'>
+                <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+          </div>
+    </div>
 
-       </div> <script type="text/javascript"> datos(); </script> </div>
+       <!-- aqui inicia formulario ***************************************************************************************-->
 
+
+
+             <div class="row">
+                   <div class="col-xs-1 col-md-1" style="background-color:white;"></div>
+                   <div class="col-xs-11 col-md-11" style="background-color:white;">
+
+                         <div class="col-xs-6 col-md-6" style="background-color:white;">
+
+                              <img  id = "imagen_uni"src="{{asset('paginas/p7.PNG')}}" style="width:100%;">
+
+                         </div>
+
+                         <div class="col-xs-6 col-md-6" style="background-color:white;">
+
+                                <br><h3 class="text-center"> <code class="text-red "><strong>Anota otras consecuencias negativas:</strong></code></h3><br>
+                                <textarea class="form-control" name="mensaje" placeholder="Anota otras consecuencias negativas" rows="5" cols="50">{{((isset($datos->comentario_negativo))?$datos->comentario_negativo:'')}}</textarea>
+                                <br><button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+                         </div>
+
+                   </div>
+             </div>
+
+
+               <div class="row">
+
+
+               </div><script type="text/javascript"> datos(); </script>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
@@ -73,15 +98,14 @@
         <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
-    <!-- /.box-footer-->
   </div>
   <!-- /.box -->
 
-</section>
-<!-- /.content -->
+  </section>
+  <!-- /.content -->
 
-<!-- Modal -->
-<div class="modal fade" id="ModalPadres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="ModalPadres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
@@ -106,11 +130,11 @@
       </div>
     </div>
   </div>
-</div>
-@endsection
+  </div>
+  @endsection
 
-@section('script')
-<script type="text/javascript">
+  @section('script')
+  <script type="text/javascript">
   JetZoom.quickStart();
   function siguiente()
      {
@@ -132,5 +156,9 @@
         location.href = "/5/"+Capitulo+"/"+(pagina_actual-1);
         //alert("atras");
       }
-</script>
-@endsection
+  function Obtener_Datos()
+         {
+
+         }
+  </script>
+  @endsection

@@ -6,27 +6,28 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 9;
-  var pagina_actual = 75;
+  /*var Capitulo = parseInt("{{((isset($datos->unidad))?$datos->unidad:'')}}",10);
+  var pagina_actual = parseInt("{{((isset($datos->pagina))?$datos->pagina:'')}}",10);//*/
+
+  var Capitulo = parseInt('{{((isset($datos["capitulo"]))?$datos["capitulo"]:"")}}',10);
+  var pagina_actual = parseInt('{{((isset($datos["pagina"]))?$datos["pagina"]:"")}}',10);//*/
+
 
   function carga_ejemplo(pagina)
      {
-       alert("pagina: "+pagina_actual);
+       alert('{{((isset($datos["info"]->comentario_negativo))?$datos["info"]->comentario_negativo:"")}}');
      }
 
      function datos()
         {
-
-
+          //carga_ejemplo(Capitulo);
             var element = document.getElementById('myImg');
             element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
             element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
             document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
 
             var element_imagen_uni = document.getElementById('imagen_uni');
-            element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+"_2.jpg";
-
-
+            element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Copia de Pagina_"+pagina_actual+".jpg";
 
         }
     function datos2()
@@ -36,9 +37,9 @@
              element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
         }
 
-  </script>
+</script>
 
-  <section class="content-header">
+<section class="content-header">
    <h1 id= "titulo">
     Nombre de la página
   </h1>
@@ -48,10 +49,10 @@
     <li class="active">Blank page</li> -->
 
   </ol>
-  </section>
+</section>
 
-  <!-- Main content -->
-  <section class="content">
+<!-- Main content -->
+<section class="content">
 
   <!-- Default box -->
   <div class="box">
@@ -78,9 +79,9 @@
 
                          <div class="col-xs-6 col-md-6" style="background-color:white;">
 
-                                <br><h3 class="text-center"> <code class="text-red "><strong>Anota otras consecuencias negativas:</strong></code></h3><br>
-                                <textarea class="form-control" name="mensaje" placeholder="Anota otras consecuencias negativas" rows="5" cols="50">{{((isset($datos->comentario_negativo))?$datos->comentario_negativo:'')}}</textarea>
-                                <br><button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+                                <br><h3 class="text-center"> <code class="text-red "><strong>Anota otras consecuencias:</strong></code></h3><br>
+                                <textarea id="Entrada_Comentario" class="form-control" name="mensaje" placeholder="Anota otras consecuencias " rows="5" cols="50">{{((isset($datos["info"]->comentario_negativo))?$datos["info"]->comentario_negativo:"")}}</textarea>
+                                <br><button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="Agrega_Comentarios()">Enviar respuestas</button>
                          </div>
 
                    </div>
@@ -101,11 +102,11 @@
   </div>
   <!-- /.box -->
 
-  </section>
-  <!-- /.content -->
+</section>
+<!-- /.content -->
 
-  <!-- Modal -->
-  <div class="modal fade" id="ModalPadres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="ModalPadres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
@@ -130,11 +131,11 @@
       </div>
     </div>
   </div>
-  </div>
-  @endsection
+</div>
+@endsection
 
-  @section('script')
-  <script type="text/javascript">
+@section('script')
+<script type="text/javascript">
   JetZoom.quickStart();
   function siguiente()
      {
@@ -156,9 +157,59 @@
         location.href = "/5/"+Capitulo+"/"+(pagina_actual-1);
         //alert("atras");
       }
-  function Obtener_Datos()
-         {
+  function Agrega_Comentarios()
+      {
+          if(
+              pagina_actual == 67 ||
+              pagina_actual == 76 ||
+              pagina_actual == 83 ||
+              pagina_actual == 90 ||
+              pagina_actual == 98 ||
+              pagina_actual == 105 ||
+              pagina_actual == 112 ||
+              pagina_actual == 120 
 
-         }
-  </script>
-  @endsection
+            )
+            {
+              var url = "/almacenar/Almacenar_Comentarios_Pos";
+            }
+          else
+            {
+              var url = "/almacenar/Almacenar_Comentarios_Neg";
+            }
+
+           var comentario = $('#Entrada_Comentario').val();
+           var success;
+
+
+           var dataForm = new FormData();
+
+
+           dataForm.append('Capitulo',Capitulo);
+           dataForm.append('pagina_actual',pagina_actual);
+           dataForm.append('comentario',comentario);
+
+           $.ajax(
+                   {
+                       url :url,
+                       data : dataForm,
+                       contentType:false,
+                       processData:false,
+                       headers:
+                           {
+                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                           },
+                       type: 'POST',
+                       dataType : 'json',
+                       beforeSend: function (){ $("#modalCarga").modal();},
+                       success : function(json){ location.reload(); },
+                       error : function(xhr, status)
+                           {
+                             $("#textoModalMensaje").text('Existió un problema con la operación');
+                             $("#modalMensaje").modal();
+                           },
+                       complete : function(xhr, status){ $("#modalCarga").modal('hide');}
+                 });
+     }//*/
+</script>
+@endsection
