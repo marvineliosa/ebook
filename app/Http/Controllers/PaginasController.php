@@ -338,18 +338,11 @@
 
                 public function Obtener_Comentarios($capitulo,$pagina)
                     {
-                      if(
-                          $pagina == 68  ||
-                          $pagina == 77  ||
-                          $pagina == 84  ||
-                          $pagina == 91  ||
-                          $pagina == 99  ||
-                          $pagina == 106  ||
-                          $pagina == 113  ||
-                          $pagina == 121
-                        )
+                      $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+
+                      if( $pagina == 68  || $pagina == 77  || $pagina == 84  || $pagina == 91  || $pagina == 99  || $pagina == 106  || $pagina == 113  || $pagina == 121 )
                           {
-                              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario'); //manejo de sesion
+                               //manejo de sesion
                               $datos = DB::table('opinion')
                                           ->where('user',$usuario)
                                           ->where('unidad',$capitulo)
@@ -357,32 +350,29 @@
                                           ->get();
                               if(count($datos)>0) { $datos = $datos[0];}
                               $json = array ( "info" => $datos,"capitulo" => $capitulo,"pagina" => $pagina);
-
                               return view("plantilla_Opinion")->with(["datos"=>$json]);
-
-
-
                           }
                       else
                           {
-                              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario'); //manejo de sesion
-                              if(
-                                  $pagina == 67  ||
-                                  $pagina == 76  ||
-                                  $pagina == 83  ||
-                                  $pagina == 90  ||
-                                  $pagina == 98  ||
-                                  $pagina == 105  ||
-                                  $pagina == 112  ||
-                                  $pagina == 120
-                                )
-                                {
-                                  $datos = DB::table('comentarios_positivos')
-                                              ->where('user',$usuario)
-                                              ->where('unidad',$capitulo)
-                                              ->where('pagina',$pagina)//*/
-                                              ->get();
-                                }
+                              if( $pagina == 67  || $pagina == 76  || $pagina == 83  ||$pagina == 90  || $pagina == 98  || $pagina == 105  ||$pagina == 112  || $pagina == 120 )
+                                  {
+                                    $datos = DB::table('comentarios_positivos')
+                                                ->where('user',$usuario)
+                                                ->where('unidad',$capitulo)
+                                                ->where('pagina',$pagina)//*/
+                                                ->get();
+                                  }
+                                elseif ($pagina == 69  || $pagina == 78  || $pagina == 85  || $pagina == 92  || $pagina == 100  || $pagina == 107  || $pagina == 114  || $pagina == 122 )
+                                  {
+                                    $datos = DB::table('compromiso')
+                                                ->where('user',$usuario)
+                                                ->where('unidad',$capitulo)
+                                                ->where('pagina',$pagina)//*/
+                                                ->get();
+                                    if(count($datos)>0) { $datos = $datos[0];}
+                                    $json = array ( "info" => $datos,"capitulo" => $capitulo,"pagina" => $pagina);
+                                    return view("plantilla_Compromiso")->with(["datos"=>$json]);
+                                  }
                               else
                                 {
                                   $datos = DB::table('comentarios_negativos')
@@ -538,6 +528,66 @@
                                           echo json_encode($data);//*/
 
                                       }
+
+                                      public function Respuestas_Compromiso(Request $request)
+                                            {
+                                                date_default_timezone_set('America/Mexico_City');
+
+                                                $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+                                                $tipo = null;
+                                                $existe = DB::table('compromiso')
+                                                            ->where('user',$usuario)
+                                                            ->where('unidad',$request['Capitulo'])
+                                                            ->where('pagina',$request['pagina_actual'])
+                                                            ->get();
+
+                                                if(count($existe)>0)
+                                                  {
+                                                      $tipo = 'update';
+                                                      DB::table('compromiso')
+                                                                ->where('user', $usuario)
+                                                                ->where('unidad',$request['Capitulo'])
+                                                                ->where('pagina',$request['pagina_actual'])
+                                                                ->update(
+                                                                          [
+                                                                              'user' => $usuario,
+                                                                              'unidad' => $request['Capitulo'],
+                                                                              'pagina' => $request['pagina_actual'],
+
+                                                                              'nombre' => $request['nombre'],
+                                                                              'compromiso_individual' => $request['compromiso_individual'],
+                                                                              'compromiso_grupal' => $request['compromiso_grupal'],
+                                                                              'tutor' => $request['tutor'],
+                                                                              'familiar_1' => $request['familiar_1'],
+                                                                              'familiar_2' => $request['familiar_2'],
+                                                                              'familiar_3' => $request['familiar_3'],
+                                                                              'updated_at' => date('Y-m-d H:i:s')
+                                                                          ]);
+                                                  }
+                                                else
+                                                  {
+                                                      $tipo = 'insert';
+                                                      DB::table('compromiso')
+                                                                ->insert(
+                                                                          [
+                                                                            'user' => $usuario,
+                                                                            'unidad' => $request['Capitulo'],
+                                                                            'pagina' => $request['pagina_actual'],
+
+                                                                            'nombre' => $request['nombre'],
+                                                                            'compromiso_individual' => $request['compromiso_individual'],
+                                                                            'compromiso_grupal' => $request['compromiso_grupal'],
+                                                                            'tutor' => $request['tutor'],
+                                                                            'familiar_1' => $request['familiar_1'],
+                                                                            'familiar_2' => $request['familiar_2'],
+                                                                            'familiar_3' => $request['familiar_3'],
+                                                                            'created_at' => date('Y-m-d H:i:s')
+                                                                          ]);
+                                                  }
+                                                $data = array("exito" => $tipo);
+                                                echo json_encode($data);//*/
+
+                                            }
         //********************************************************************************
 
     }

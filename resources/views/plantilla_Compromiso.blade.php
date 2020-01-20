@@ -6,10 +6,10 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 8;
+  /*var Capitulo = 8;
   var pagina_actual = 69;//*/
 
-  /*var Capitulo = parseInt('{{((isset($datos["capitulo"]))?$datos["capitulo"]:"")}}',10);
+  var Capitulo = parseInt('{{((isset($datos["capitulo"]))?$datos["capitulo"]:"")}}',10);
   var pagina_actual = parseInt('{{((isset($datos["pagina"]))?$datos["pagina"]:"")}}',10);//*/
 
 
@@ -93,19 +93,19 @@
                    </div>
 
                    <div class="col-xs-10 col-md-10" style="background-color:white;">
-                     <input type="text" class="form-control" id="Entrada_nombre" placeholder="Escribe tu nombre aquí" value="">
+                     <input type="text" class="form-control" id="Entrada_nombre" placeholder="Escribe tu nombre aquí" value='{{((isset($datos["info"]->nombre))?$datos["info"]->nombre:"")}}'>
                    </div>
                  </div>
                  <br>
                  <p>
                    me comprometo conmigo mismo a:
                  </p>
-                 <input type="text" class="form-control" id="Entrada_Compromiso_individual" placeholder="Escribe tu compromiso individual aquí" value="">
+                 <input type="text" class="form-control" id="Entrada_Compromiso_individual" placeholder="Escribe tu compromiso individual aquí" value='{{((isset($datos["info"]->compromiso_individual))?$datos["info"]->compromiso_individual:"")}}'>
                  <br>
                  <p>
                    Y con mi grupo a:
                  </p>
-                 <input type="text" class="form-control" id="Entrada_Compromiso_Grupal" placeholder="Escribe tu compromiso grupal aquí" value="">
+                 <input type="text" class="form-control" id="Entrada_Compromiso_Grupal" placeholder="Escribe tu compromiso grupal aquí" value='{{((isset($datos["info"]->compromiso_grupal))?$datos["info"]->compromiso_grupal:"")}}'>
                  <br>
                  <p class="text-center">
                    Me acabo de comprometer<br>¿Me ayudas a cumplir mi compromiso?
@@ -114,13 +114,10 @@
                  <div class="row">
                    <div class="col-xs-12 col-md-12" style="background-color:white;">
                      <p class="text-green text-center">Yo:</p>
-                     <input type="text" class="form-control" id="Entrada_nombre_tutor_1" placeholder="Nombre del padre o tutor" value="">
+                     <input type="text" class="form-control" id="Entrada_nombre_tutor_1" placeholder="Nombre del padre o tutor" value='{{((isset($datos["info"]->tutor))?$datos["info"]->tutor:"")}}'>
                    </div>
 
-                   <!-- <div class="col-xs-6 col-md-6" style="background-color:white;">
-                     <p class="text-green text-center">Yo:</p>
-                     <input type="text" class="form-control" id="Entrada_nombre_tutor_2" placeholder="Mamá" value="">
-                   </div> -->
+
                  </div>
                  <br>
                  <p class="text-center">
@@ -130,11 +127,11 @@
                  <p class="text-center">
                        Otros familiares que quieran unirse a este compromiso:
                  </p>
-                 <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_1" placeholder="Nombre del familiar" value="">
+                 <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_1" placeholder="Nombre del familiar" value='{{((isset($datos["info"]->familiar_1))?$datos["info"]->familiar_1:"")}}'>
                  <br>
-                 <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_2" placeholder="Nombre del familiar" value="">
+                 <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_2" placeholder="Nombre del familiar" value='{{((isset($datos["info"]->familiar_2))?$datos["info"]->familiar_2:"")}}'>
                  <br>
-                 <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_3" placeholder="Nombre del familiar" value="">
+                 <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_3" placeholder="Nombre del familiar" value='{{((isset($datos["info"]->familiar_3))?$datos["info"]->familiar_3:"")}}'>
                  <br>
                  <button type="button" class="btn btn-block btn-default" id="Boton_Aceptar()" onclick="almacenarInformacion()">Aceptar</button>
 
@@ -226,12 +223,18 @@
         location.href = "/1/"+Capitulo+"/"+(pagina_actual-1);
         //alert("atras");
       }
-  function Agrega_respuestas()
+  function almacenarInformacion()
       {
            var url = "/almacenar/Respuestas_Compromiso";
-           var pre1 = $('#Entrada_pre1').val();
-           var pre2 = $('#Entrada_pre2').val();
-           var conclusion = $('#Entrada_con').val();
+
+           var nombre = $('#Entrada_nombre').val();
+           var compro_individual = $('#Entrada_Compromiso_individual').val();
+           var compro_grupal = $('#Entrada_Compromiso_Grupal').val();
+           var tutor = $('#Entrada_nombre_tutor_1').val();
+           var familiar1 = $('#Entrada_familiar_1').val();
+           var familiar2 = $('#Entrada_familiar_2').val();
+           var familiar3 = $('#Entrada_familiar_3').val();
+
            var success;
 
 
@@ -240,9 +243,14 @@
 
            dataForm.append('Capitulo',Capitulo);
            dataForm.append('pagina_actual',pagina_actual);
-           dataForm.append('pre1',pre1);
-           dataForm.append('pre2',pre2);
-           dataForm.append('conclusion',conclusion);
+
+           dataForm.append('nombre',nombre);
+           dataForm.append('compromiso_individual',compro_individual);
+           dataForm.append('compromiso_grupal',compro_grupal);
+           dataForm.append('tutor',tutor);
+           dataForm.append('familiar_1',familiar1);
+           dataForm.append('familiar_2',familiar2);
+           dataForm.append('familiar_3',familiar3);
 
            $.ajax(
                    {
