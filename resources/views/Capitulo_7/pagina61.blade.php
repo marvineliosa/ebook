@@ -39,7 +39,23 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_7/2017PUE_PRIM_61.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_7/2017PUE_PRIM_61.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box">
+          <img src="{{asset('paginas/Capitulo7/recortes/2017PUE_PRIM_65.JPG')}}" class="img-fluid jetzoom" data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo7/recortes/2017PUE_PRIM_65.JPG')}}'"  style="max-width: 100%">
+          <br>
+          <br>
+          <p class="text-left"> Menciona algo que hayas aprendido sobre <code class="text-purple "><strong>En todo está el agua. La huella hídrica</strong></code>y explicalo con tus propias palabras:</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"> ¿Cómo te sientes con el valor que aprendiste hoy?</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"><code class="text-orange"><strong>Conclusiones</strong></code></p>
+          <p class="text-left">Anota dos conclusiones importantes a las que llegó el grupo</p>
+          <p><class="text-left"> <textarea name="mensaje" placeholder="" rows="5" cols="50"></textarea></p>
+          <br>
+          <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+
+        </div>
       </div>
     </div>
     <!-- /.box-body -->
@@ -67,7 +83,6 @@
         </button>
       </div>
       <div class="modal-body">
-
         <div align='center'>
           <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
         </div>

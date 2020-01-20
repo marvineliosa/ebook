@@ -39,7 +39,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/9.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/9_.PNG')}}'" style="max-width: 100%" > <!--LINEA TRABJA CON JETZOOM-->
+        <img src="{{asset('paginas/Capitulo0/0009.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo0/0009.PNG')}}'" style="max-width: 100%" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->

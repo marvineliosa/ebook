@@ -25,9 +25,9 @@
       <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
       <br>
       <br>
-    <!--<h3 class="box-title"><audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/Primpag5.mp3')}}">
-        </audio></h3>-->
+     <h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/Capitulo0/Pag 16.mp3')}}">
+        </audio></h3>
 
       <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -39,7 +39,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/2017PUE_PRIM_9.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/2017PUE_PRIM_9.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <img src="{{asset('paginas/Capitulo0/0009.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo0/0009.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
       </div>
     </div>
     <!-- /.box-body -->
