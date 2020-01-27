@@ -19,7 +19,7 @@
             var element = document.getElementById('myImg');
             element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
             element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
-            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+            document.getElementById("titulo").innerHTML = titulo_text;
         }
     function datos2()
         {

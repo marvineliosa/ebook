@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 8;
+  var Capitulo = 8;var titulo_text = "Aunque somos iguales, tenemos muchas diferencias: biodiversidad genética";
   var pagina_actual = 66;
 
   function carga_ejemplo(pagina)
@@ -21,7 +21,7 @@
             var element = document.getElementById('myImg');
             element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
             element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
-            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+            document.getElementById("titulo").innerHTML = titulo_text;
 
             var element_imagen_uni = document.getElementById('imagen_uni');
             element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+"_2.jpg";

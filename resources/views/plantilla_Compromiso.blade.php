@@ -33,7 +33,7 @@
             var element_imagen_uni = document.getElementById('imagen_conclusion');
             element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Copia de Pagina_"+pagina_actual+" 2.jpg";
 
-            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+            document.getElementById("titulo").innerHTML = titulo_text;
 
         }
     function datos2()
