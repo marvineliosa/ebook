@@ -56,6 +56,10 @@
              var element2 = document.getElementById('myImg2');
              element2.src = "{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg";
              element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
+
+             var element_audio = document.getElementById('audio');
+             element_audio.src = "{{asset('/')}}"+"audio/Padres/Capitulo_"+Capitulo+"/Pag "+pagina_actual+".mp3";
+
         }
 
 </script>
@@ -200,7 +204,7 @@
         <div align='center'>
           <br>
           <audio id="audio" controls="">
-                    <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_8/Pag 66.mp3">
+                    <source type="audio/wav" src="http://127.0.0.1:8000/audio/Padres/Capitulo_8/Pag 66.mp3">
                   </audio>
           <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 100%">
 
