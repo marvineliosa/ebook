@@ -12,6 +12,21 @@
   var Capitulo = parseInt('{{((isset($datos["capitulo"]))?$datos["capitulo"]:"")}}',10);
   var pagina_actual = parseInt('{{((isset($datos["pagina"]))?$datos["pagina"]:"")}}',10);//*/
 
+  var titulo_text = "";
+
+  switch (Capitulo)
+    {
+          case 8:titulo_text = "Aunque somos iguales, tenemos muchas diferencias: biodiversidad genética"; break;
+          case 9:titulo_text = "Los animales de la granja no deben sufrir"; break;
+          case 10:titulo_text = "Expresión de emociones y apoyo para su regulación"; break;
+          case 11:titulo_text = "Camino a la adolescencia"; break;
+          case 12:titulo_text = "Juntos somos más fuertes"; break;
+          case 13:titulo_text = "Diversidad y discriminación"; break;
+          case 14:titulo_text = "La influencia de mis compañeros"; break;
+          case 15:titulo_text = "Crecimiento, cambios físicos y emocionales"; break;
+          default:titulo_text = "Pagina aun en desarrollo"; break;break;
+
+    }
 
 
   function carga_ejemplo(pagina)
@@ -33,7 +48,7 @@
             var element_imagen_uni = document.getElementById('imagen_conclusion');
             element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Copia de Pagina_"+pagina_actual+" 2.jpg";
 
-            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+            document.getElementById("titulo").innerHTML = titulo_text;
 
         }
     function datos2()
@@ -176,7 +191,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -187,7 +202,7 @@
           <audio id="audio" controls="">
                     <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_8/Pag 66.mp3">
                   </audio>
-          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
         </div>
       </div>
@@ -206,12 +221,25 @@
   function siguiente()
      {
 
+       var pag_sig = pagina_actual+1;
 
        if( pagina_actual == 69  || pagina_actual == 78  || pagina_actual == 85 || pagina_actual == 92 || pagina_actual == 100 || pagina_actual == 107 || pagina_actual == 114 || pagina_actual == 122)
          {
-           Capitulo =  Capitulo + 1;
+           if(Capitulo != 15)
+           {
+             Capitulo =  Capitulo + 1;
+           }
+           if(pagina_actual != 122)
+           {
+             pag_sig = pagina_actual+1
+           }
+           else {
+             pag_sig = pagina_actual;
+           }
+
          }
-       location.href = "/1/"+Capitulo+"/"+(pagina_actual+1);
+        location.href = "/1/"+Capitulo+"/"+(pag_sig);
+
 
      }
    function anterior()

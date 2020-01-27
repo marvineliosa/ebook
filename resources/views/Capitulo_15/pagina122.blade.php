@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 15;
+  var Capitulo = 15;var titulo_text = "Crecimiento, cambios físicos y emocionales";
   var pagina_actual = 122;
 
 
@@ -20,7 +20,7 @@
             var element = document.getElementById('myImg');
             element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
             element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
-            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+            document.getElementById("titulo").innerHTML = titulo_text;
         }
     function datos2()
         {
@@ -62,7 +62,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
        </div> <script type="text/javascript"> datos(); </script> </div>
 
@@ -70,7 +70,8 @@
     <div class="box-footer" align="center">
       <div class="btn-group">
         <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
-        <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
+        <!--<button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>-->
+
       </div>
     </div>
     <!-- /.box-footer-->
@@ -85,7 +86,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -96,7 +97,7 @@
           <audio id="audio" controls="">
                     <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_15/Pag 122.mp3">
                   </audio>
-          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
         </div>
       </div>
@@ -112,7 +113,7 @@
 @section('script')
 <script type="text/javascript">
   JetZoom.quickStart();
-  function siguiente()
+  /*function siguiente()
      {
 
 
@@ -122,7 +123,7 @@
          }
        location.href = "/1/"+Capitulo+"/"+(pagina_actual+1);
 
-     }
+     }*/
    function anterior()
       {
         if( pagina_actual == 63  || pagina_actual == 70 || pagina_actual == 79 || pagina_actual == 86 || pagina_actual == 93 || pagina_actual == 101 || pagina_actual == 108 || pagina_actual == 115)

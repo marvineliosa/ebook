@@ -123,7 +123,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
