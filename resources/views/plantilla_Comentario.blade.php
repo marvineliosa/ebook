@@ -11,6 +11,21 @@
 
   var Capitulo = parseInt('{{((isset($datos["capitulo"]))?$datos["capitulo"]:"")}}',10);
   var pagina_actual = parseInt('{{((isset($datos["pagina"]))?$datos["pagina"]:"")}}',10);//*/
+  var titulo_text = "";
+
+  switch (Capitulo)
+    {
+          case 8:titulo_text = "Aunque somos iguales, tenemos muchas diferencias: biodiversidad genética"; break;
+          case 9:titulo_text = "Los animales de la granja no deben sufrir"; break;
+          case 10:titulo_text = "Expresión de emociones y apoyo para su regulación"; break;
+          case 11:titulo_text = "Camino a la adolescencia"; break;
+          case 12:titulo_text = "Juntos somos más fuertes"; break;
+          case 13:titulo_text = "Diversidad y discriminación"; break;
+          case 14:titulo_text = "La influencia de mis compañeros"; break;
+          case 15:titulo_text = "Crecimiento, cambios físicos y emocionales"; break;
+          default:titulo_text = "Pagina aun en desarrollo"; break;break;
+
+    }
 
 
   function carga_ejemplo(pagina)
@@ -59,7 +74,7 @@
     <div class="box-header with-border" align="center"><button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br></div>
     <div class="box-body">
           <div align='center'>
-                <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
+                <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 65%">
           </div>
     </div>
 
@@ -73,7 +88,7 @@
 
                          <div class="col-xs-6 col-md-6" style="background-color:white;">
 
-                              <img  id = "imagen_uni"src="{{asset('paginas/p7.PNG')}}" style="width:100%;">
+                              <img  id = "imagen_uni"src="{{asset('paginas/p7.PNG')}}" style="width:65%;">
 
                          </div>
 
@@ -167,7 +182,7 @@
               pagina_actual == 98 ||
               pagina_actual == 105 ||
               pagina_actual == 112 ||
-              pagina_actual == 120 
+              pagina_actual == 120
 
             )
             {

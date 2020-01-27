@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 9;
+  var Capitulo = 9;var titulo_text = "Los animales de la granja no deben sufrir";
   var pagina_actual = 71;
 
   function carga_ejemplo(pagina)

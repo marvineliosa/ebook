@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 14;
+  var Capitulo = 14;var titulo_text = "La influencia de mis compañeros";
   var pagina_actual = 112;
 
   function carga_ejemplo(pagina)

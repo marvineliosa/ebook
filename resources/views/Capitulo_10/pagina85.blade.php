@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 10;
+  var Capitulo = 10;var titulo_text = "Expresión de emociones y apoyo para su regulación";
   var pagina_actual = 85;
 
   function carga_ejemplo(pagina)

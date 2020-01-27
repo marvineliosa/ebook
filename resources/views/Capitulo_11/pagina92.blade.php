@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 11;
+  var Capitulo = 11;var titulo_text = "Camino a la adolescencia";
   var pagina_actual = 92;
 
   function carga_ejemplo(pagina)

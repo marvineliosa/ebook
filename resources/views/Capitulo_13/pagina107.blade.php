@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 13;
+  var Capitulo = 13;var titulo_text = "Diversidad y discriminación";
   var pagina_actual = 107;
 
   function carga_ejemplo(pagina)

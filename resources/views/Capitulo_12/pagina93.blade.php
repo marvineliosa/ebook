@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 12;
+  var Capitulo = 12;var titulo_text = "Juntos somos más fuertes";
   var pagina_actual = 93;
 
   function carga_ejemplo(pagina)

@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 15;
+  var Capitulo = 15;var titulo_text = "Crecimiento, cambios físicos y emocionales";
   var pagina_actual = 115;
 
 

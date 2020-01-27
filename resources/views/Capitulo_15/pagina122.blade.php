@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 15;
+  var Capitulo = 15;var titulo_text = "Crecimiento, cambios físicos y emocionales";
   var pagina_actual = 122;
 
 
@@ -70,7 +70,8 @@
     <div class="box-footer" align="center">
       <div class="btn-group">
         <button type="button" class="btn btn-default" onclick="anterior()"><i class="fa  fa-arrow-left"></i></button>
-        <button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>
+        <!--<button type="button" class="btn btn-default" onclick="siguiente()"><i class="fa fa-arrow-right"></i></button>-->
+
       </div>
     </div>
     <!-- /.box-footer-->
@@ -112,7 +113,7 @@
 @section('script')
 <script type="text/javascript">
   JetZoom.quickStart();
-  function siguiente()
+  /*function siguiente()
      {
 
 
@@ -122,7 +123,7 @@
          }
        location.href = "/1/"+Capitulo+"/"+(pagina_actual+1);
 
-     }
+     }*/
    function anterior()
       {
         if( pagina_actual == 63  || pagina_actual == 70 || pagina_actual == 79 || pagina_actual == 86 || pagina_actual == 93 || pagina_actual == 101 || pagina_actual == 108 || pagina_actual == 115)
