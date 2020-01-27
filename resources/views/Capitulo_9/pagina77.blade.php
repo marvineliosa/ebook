@@ -61,7 +61,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
        </div> <script type="text/javascript"> datos(); </script> </div>
 
@@ -95,7 +95,7 @@
           <audio id="audio" controls="">
                     <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_9/Pag 77.mp3">
                   </audio>
-          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
         </div>
       </div>

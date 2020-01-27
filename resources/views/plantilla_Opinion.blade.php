@@ -70,7 +70,7 @@ function carga_ejemplo(pagina)
                  <div class="col-xs-2 col-md-2" style="background-color:white;"></div>
                  <div class="col-xs-8 col-md-8" style="background-color:white;">
 
-                       <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+                       <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
                        <br>
                        <textarea id="Entrada_pre1" class="form-control" name="mensaje" placeholder="Escribe aqui tu respuesta " rows="5" cols="20">{{((isset($datos["info"]->pre1))?$datos["info"]->pre1:"")}}</textarea>
                        <br>
@@ -124,7 +124,7 @@ function carga_ejemplo(pagina)
         <audio id="audio" controls="">
                   <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_8/Pag 66.mp3">
                 </audio>
-        <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+        <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
       </div>
     </div>
