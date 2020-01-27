@@ -68,7 +68,7 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
         <div align='center'>
           <img src="{{asset('padres/Padres_6.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_6.PNG')}}'"  style="max-width: 100%">
         </div>
