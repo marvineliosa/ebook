@@ -95,7 +95,7 @@
           <audio id="audio" controls="">
                     <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_10/Pag 84.mp3">
                   </audio>
-          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 100%">
 
         </div>
       </div>

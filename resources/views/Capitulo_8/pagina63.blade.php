@@ -92,7 +92,7 @@
       </div>
       <div class="modal-body">
         <div align='center'>
-          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 100%">
 
         </div>
       </div>
