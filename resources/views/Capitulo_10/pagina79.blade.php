@@ -27,6 +27,7 @@
              var element2 = document.getElementById('myImg2');
              element2.src = "{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg";
              element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";var element_audio = document.getElementById('audio2');element_audio.src = "{{asset('/')}}"+"audio/Capitulo_"+Capitulo+"/Pag "+pagina_actual+".mp3";
+             var element_audio = document.getElementById('audio2');element_audio.src = "{{asset('/')}}"+"audio/Capitulo_"+Capitulo+"/Pag "+pagina_actual+".mp3";
         }
 
 </script>
@@ -49,7 +50,7 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br><br><audio id="audio2" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Padres/Capitulo_8/Pag 66.mp3"></audio><br>
       <br>
 
       <!-- <div class="box-tools pull-right">
