@@ -16,6 +16,531 @@
          * @return Response
          */
 
+
+        /* sin capitulo  */
+        public function AlmacenarPagina1(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('table_resp_ac1')
+                ->where('user',$usuario)
+                ->get();
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('table_resp_ac1')
+                    ->where('user', $usuario)
+                    ->update([
+                                'respuesta1' => $request['respuesta1'],
+                                'respuesta2' => $request['respuesta2'],
+                                'respuesta3' => $request['respuesta3'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                //dd('Insert');
+                $tipo = 'insert';
+                DB::table('table_resp_ac1')
+                    ->insert(
+                        [
+                            'respuesta1' => $request['respuesta1'],
+                            'respuesta2' => $request['respuesta2'],
+                            'respuesta3' => $request['respuesta3'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+            echo json_encode($data);//*/
+
+        }
+
+
+        public function Pagina1(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('table_resp_ac1')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('pagina1')->with(["datos"=>$datos]);
+        }
+        /* sin capitulo  */
+
+        /*capitulo1 */
+        public function AlmacenarPagina16(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('comentarios_negativos')
+                ->where('user',$usuario)
+                ->get();
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('comentarios_negativos')
+                    ->where('user', $usuario)
+                    ->update([
+                                'unidad' => $request['unidad'],
+                                'pagina' => $request['pagina'],
+                                'comentario_negativo' => $request['respuesta'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                //dd('Insert');
+                $tipo = 'insert';
+                DB::table('comentarios_negativos')
+                    ->insert(
+                        [
+                          'unidad' => $request['unidad'],
+                          'pagina' => $request['pagina'],
+                          'comentario_negativo' => $request['respuesta'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+            echo json_encode($data);//*/
+
+        }
+
+
+        public function Pagina16(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('comentarios_negativos')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('Capitulo_1/pagina16')->with(["datos"=>$datos]);
+        }
+
+        public function AlmacenarPagina17(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('comentarios_positivos')
+                ->where('user',$usuario)
+                ->get();
+
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('comentarios_positivos')
+                    ->where('user', $usuario)
+                    ->update([
+                                'unidad' => $request['unidad'],
+                                'pagina' => $request['pagina'],
+                                'comentario_negativo' => $request['respuesta'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                $tipo = 'insert';
+                DB::table('comentarios_positivos')
+                    ->insert(
+                        [
+                          'unidad' => $request['unidad'],
+                          'pagina' => $request['pagina'],
+                          'comentario_negativo' => $request['respuesta'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+              //dd($datos);
+            echo json_encode($data);//*/
+        }
+
+
+        public function Pagina17(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('comentarios_positivos')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('Capitulo_1/pagina17')->with(["datos"=>$datos]);
+        }
+
+        public function AlmacenarPagina18(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('opinion')
+                ->where('user',$usuario)
+                ->get();
+
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('opinion')
+                    ->where('user', $usuario)
+                    ->update([
+                                'unidad' => $request['unidad'],
+                                'pagina' => $request['pagina'],
+                                'pre1' => $request['respuesta1'],
+                                'pre2' => $request['respuesta2'],
+                                'conclusion' => $request['conclusion'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                $tipo = 'insert';
+                DB::table('opinion')
+                    ->insert(
+                        [
+                          'unidad' => $request['unidad'],
+                          'pagina' => $request['pagina'],
+                          'pre1' => $request['respuesta1'],
+                          'pre2' => $request['respuesta2'],
+                          'conclusion' => $request['conclusion'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+              //dd($datos);
+            echo json_encode($data);//*/
+        }
+
+
+        public function Pagina18(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('opinion')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('Capitulo_1/pagina18')->with(["datos"=>$datos]);
+          }
+
+          public function AlmacenarPagina19(Request $request){
+              date_default_timezone_set('America/Mexico_City');
+              //dd($request['respuesta2']);
+              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+              $tipo = null;
+              $existe = DB::table('compromiso')
+                  ->where('user',$usuario)
+                  ->get();
+
+              if(count($existe)>0){
+                  $tipo = 'update';
+                  //dd('Update');
+                  DB::table('compromiso')
+                      ->where('user', $usuario)
+                      ->update([
+                                  'unidad' => $request['unidad'],
+                                  'pagina' => $request['pagina'],
+                                  'nombre' => $request['nombre'],
+                                  'compromiso_individual' => $request['individual'],
+                                  'compromiso_grupal' => $request['grupal'],
+                                  'tutor' => $request['tutor'],
+                                  'familiar_1' => $request['familiar1'],
+                                  'familiar_2' => $request['familiar2'],
+                                  'familiar_3' => $request['familiar3'],
+                                  'updated_at' => date('Y-m-d H:i:s')
+                              ]
+                          );
+              }else{
+                  $tipo = 'insert';
+                  DB::table('compromiso')
+                      ->insert(
+                          [
+                            'unidad' => $request['unidad'],
+                            'pagina' => $request['pagina'],
+                            'nombre' => $request['nombre'],
+                            'compromiso_individual' => $request['individual'],
+                            'compromiso_grupal' => $request['grupal'],
+                            'tutor' => $request['tutor'],
+                            'familiar_1' => $request['familiar1'],
+                            'familiar_2' => $request['familiar2'],
+                            'familiar_3' => $request['familiar3'],
+                              'user' => $usuario,
+                              'created_at' => date('Y-m-d H:i:s')
+                          ]
+                      );
+              }
+              $data = array(
+                  "exito" => $tipo
+                );
+                //dd($datos);
+              echo json_encode($data);//*/
+          }
+
+
+          public function Pagina19(Request $request){
+              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+              $datos = DB::table('compromiso')
+                  ->where('user',$usuario)
+                  ->get();
+              if(count($datos)>0){
+                  $datos = $datos[0];
+              }
+              //dd($datos);
+              return view('Capitulo_1/pagina19')->with(["datos"=>$datos]);
+            }
+        /**/
+
+        /*capitulo 2*/
+        public function AlmacenarPagina23(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('comentarios_negativos')
+                ->where('user',$usuario)
+                ->get();
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('comentarios_negativos')
+                    ->where('user', $usuario)
+                    ->update([
+                                'unidad' => $request['unidad'],
+                                'pagina' => $request['pagina'],
+                                'comentario_negativo' => $request['respuesta'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                //dd('Insert');
+                $tipo = 'insert';
+                DB::table('comentarios_negativos')
+                    ->insert(
+                        [
+                          'unidad' => $request['unidad'],
+                          'pagina' => $request['pagina'],
+                          'comentario_negativo' => $request['respuesta'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+            echo json_encode($data);//*/
+
+        }
+
+
+        public function Pagina23(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('comentarios_negativos')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('Capitulo_2/pagina23')->with(["datos"=>$datos]);
+        }
+
+        public function AlmacenarPagina24(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('comentarios_positivos')
+                ->where('user',$usuario)
+                ->get();
+
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('comentarios_positivos')
+                    ->where('user', $usuario)
+                    ->update([
+                                'unidad' => $request['unidad'],
+                                'pagina' => $request['pagina'],
+                                'comentario_negativo' => $request['respuesta'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                $tipo = 'insert';
+                DB::table('comentarios_positivos')
+                    ->insert(
+                        [
+                          'unidad' => $request['unidad'],
+                          'pagina' => $request['pagina'],
+                          'comentario_negativo' => $request['respuesta'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+              //dd($datos);
+            echo json_encode($data);//*/
+        }
+
+
+        public function Pagina24(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('comentarios_positivos')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('Capitulo_2/pagina24')->with(["datos"=>$datos]);
+        }
+
+        public function AlmacenarPagina25(Request $request){
+            date_default_timezone_set('America/Mexico_City');
+            //dd($request['respuesta2']);
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $tipo = null;
+            $existe = DB::table('opinion')
+                ->where('user',$usuario)
+                ->get();
+
+            if(count($existe)>0){
+                $tipo = 'update';
+                //dd('Update');
+                DB::table('opinion')
+                    ->where('user', $usuario)
+                    ->update([
+                                'unidad' => $request['unidad'],
+                                'pagina' => $request['pagina'],
+                                'pre1' => $request['respuesta1'],
+                                'pre2' => $request['respuesta2'],
+                                'conclusion' => $request['conclusion'],
+                                'updated_at' => date('Y-m-d H:i:s')
+                            ]
+                        );
+            }else{
+                $tipo = 'insert';
+                DB::table('opinion')
+                    ->insert(
+                        [
+                          'unidad' => $request['unidad'],
+                          'pagina' => $request['pagina'],
+                          'pre1' => $request['respuesta1'],
+                          'pre2' => $request['respuesta2'],
+                          'conclusion' => $request['conclusion'],
+                            'user' => $usuario,
+                            'created_at' => date('Y-m-d H:i:s')
+                        ]
+                    );
+            }
+            $data = array(
+                "exito" => $tipo
+              );
+              //dd($datos);
+            echo json_encode($data);//*/
+        }
+
+
+        public function Pagina25(Request $request){
+            $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+            $datos = DB::table('opinion')
+                ->where('user',$usuario)
+                ->get();
+            if(count($datos)>0){
+                $datos = $datos[0];
+            }
+            //dd($datos);
+            return view('Capitulo_2/pagina25')->with(["datos"=>$datos]);
+          }
+
+          public function AlmacenarPagina26(Request $request){
+              date_default_timezone_set('America/Mexico_City');
+              //dd($request['respuesta2']);
+              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+              $tipo = null;
+              $existe = DB::table('compromiso')
+                  ->where('user',$usuario)
+                  ->get();
+
+              if(count($existe)>0){
+                  $tipo = 'update';
+                  //dd('Update');
+                  DB::table('compromiso')
+                      ->where('user', $usuario)
+                      ->update([
+                                  'unidad' => $request['unidad'],
+                                  'pagina' => $request['pagina'],
+                                  'nombre' => $request['nombre'],
+                                  'compromiso_individual' => $request['individual'],
+                                  'compromiso_grupal' => $request['grupal'],
+                                  'tutor' => $request['tutor'],
+                                  'familiar_1' => $request['familiar1'],
+                                  'familiar_2' => $request['familiar2'],
+                                  'familiar_3' => $request['familiar3'],
+                                  'updated_at' => date('Y-m-d H:i:s')
+                              ]
+                          );
+              }else{
+                  $tipo = 'insert';
+                  DB::table('compromiso')
+                      ->insert(
+                          [
+                            'unidad' => $request['unidad'],
+                            'pagina' => $request['pagina'],
+                            'nombre' => $request['nombre'],
+                            'compromiso_individual' => $request['individual'],
+                            'compromiso_grupal' => $request['grupal'],
+                            'tutor' => $request['tutor'],
+                            'familiar_1' => $request['familiar1'],
+                            'familiar_2' => $request['familiar2'],
+                            'familiar_3' => $request['familiar3'],
+                              'user' => $usuario,
+                              'created_at' => date('Y-m-d H:i:s')
+                          ]
+                      );
+              }
+              $data = array(
+                  "exito" => $tipo
+                );
+                //dd($datos);
+              echo json_encode($data);//*/
+          }
+
+
+          public function Pagina26(Request $request){
+              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+              $datos = DB::table('compromiso')
+                  ->where('user',$usuario)
+                  ->get();
+              if(count($datos)>0){
+                  $datos = $datos[0];
+              }
+              //dd($datos);
+              return view('Capitulo_2/pagina26')->with(["datos"=>$datos]);
+            }
+        /**/
+
         public function PaginaComentarios(Request $request){
             $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
             $datos = DB::table('table_resp_encuesta')

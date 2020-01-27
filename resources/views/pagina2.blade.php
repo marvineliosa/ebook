@@ -92,6 +92,48 @@
             location.href = pagina;
           //alert("atras");
         }
+
+
+        function almacenarInformacion(){
+          var respuesta1 = $('#mi_nombre').val();
+          var respuesta2 = "";
+          var respuesta3 = "";
+          //$("#div_cuadro").hide();
+          var success;
+          var url = "/almacenar/pagina1";
+          var dataForm = new FormData();
+          dataForm.append('respuesta1',respuesta1);
+          dataForm.append('respuesta2',respuesta2);
+          dataForm.append('respuesta3',respuesta3);
+          //lamando al metodo ajax
+
+          $.ajax({
+            url :url,
+            data : dataForm,
+            contentType:false,
+            processData:false,
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+            type: 'POST',
+            dataType : 'json',
+            beforeSend: function (){
+              $("#modalCarga").modal();
+            },
+            success : function(json){
+
+
+
+            },
+            error : function(xhr, status) {
+              $("#textoModalMensaje").text('Existió un problema con la operación');
+              $("#modalMensaje").modal();
+            },
+            complete : function(xhr, status){
+               $("#modalCarga").modal('hide');
+            }
+          });//*/
+        }
   </script>
   <!-- script zoom con jetzoom-->
   <script type="text/javascript">
