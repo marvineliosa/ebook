@@ -61,15 +61,15 @@
                   <p class="text-green ">Yo:</p>
                 </div>
                 <div class="col-xs-10 col-md-10" style="background-color:white;">
-                  <input type="text" class="form-control" id="Entrada_nombre" placeholder="Escribe tu nombre aquí" value="{{((isset($datos->nombre))?$datos->nombre:'')}}">
+                  <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre aquí" value="{{((isset($datos->nombre))?$datos->nombre:'')}}">
                 </div>
               </div>
               <br>
               <span>me comprometo conmigo mismo a:</span>
-              <input type="text" class="form-control" id="Entrada_Compromiso_individual" placeholder="Escribe tu compromiso individual aquí" value="{{((isset($datos->compromiso))?$datos->compromiso:'')}}">
+              <input type="text" class="form-control" id="individual" placeholder="Escribe tu compromiso individual aquí" value="{{((isset($datos->compromiso_individual))?$datos->compromiso_individual:'')}}">
               <br>
               <span>Y con mi grupo a:</span>
-              <input type="text" class="form-control" id="Entrada_Compromiso_Grupal" placeholder="Escribe tu compromiso grupal aquí" value="{{((isset($datos->compromisogrupal))?$datos->compromisogrupal:'')}}">
+              <input type="text" class="form-control" id="Grupal" placeholder="Escribe tu compromiso grupal aquí" value="{{((isset($datos->compromiso_grupal))?$datos->compromiso_grupal:'')}}">
               <br>
               <p class="text-center">
                 Me acabo de comprometer<br>¿Me ayudas a cumplir mi compromiso?
@@ -78,7 +78,7 @@
               <div class="row">
                 <div class="col-xs-12 col-md-12" style="background-color:white;">
                   <p class="text-green text-center">Yo:</p>
-                  <input type="text" class="form-control" id="Entrada_nombre_tutor_1" placeholder="Nombre del padre o tutor" value="{{((isset($datos->ayuda1))?$datos->ayuda1:'')}}">
+                  <input type="text" class="form-control" id="tutor_1" placeholder="Nombre del padre o tutor" value="{{((isset($datos->tutor))?$datos->tutor:'')}}">
                 </div>
 
                 <!-- <div class="col-xs-6 col-md-6" style="background-color:white;">
@@ -94,11 +94,11 @@
               <p class="text-center">
                     Otros familiares que quieran unirse a este compromiso:
               </p>
-              <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_1" placeholder="Nombre del familiar" value="{{((isset($datos->familiar1))?$datos->familiar1:'')}}">
+              <input type="text text-center" class="form-control" align="center" id="familiar_1" placeholder="Nombre del familiar" value="{{((isset($datos->familiar_1))?$datos->familiar_1:'')}}">
               <br>
-              <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_2" placeholder="Nombre del familiar" value="{{((isset($datos->familiar2))?$datos->familiar2:'')}}">
+              <input type="text text-center" class="form-control" align="center" id="familiar_2" placeholder="Nombre del familiar" value="{{((isset($datos->familiar_2))?$datos->familiar_2:'')}}">
               <br>
-              <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_3" placeholder="Nombre del familiar" value="{{((isset($datos->familiar3))?$datos->familiar3:'')}}">
+              <input type="text text-center" class="form-control" align="center" id="familiar_3" placeholder="Nombre del familiar" value="{{((isset($datos->familiar_3))?$datos->familiar_3:'')}}">
               <br>
               <button type="button" class="btn btn-block btn-default" id="Boton_Aceptar()" onclick="almacenarInformacion()">Aceptar</button>
               <br>
@@ -159,6 +159,60 @@
         {
           location.href = pagina;
           //alert("atras");
+        }
+
+        function almacenarInformacion(){
+          var nombre = $('#nombre').val();
+          var individual = $('#individual').val();
+          var grupal = $('#Grupal').val();
+          var tutor = $('#tutor_1').val();
+          var familiar1 = $('#familiar_1').val();
+          var familiar2 = $('#familiar_2').val();
+          var familiar3 = $('#familiar_3').val();
+          var unidad = 1;
+          var pagina = 19;
+
+          //$("#div_cuadro").hide();
+          var success;
+          var url = "/almacenar/pagina19";
+          var dataForm = new FormData();
+          dataForm.append('nombre',nombre);
+          dataForm.append('individual',individual);
+          dataForm.append('grupal',grupal);
+          dataForm.append('tutor',tutor);
+          dataForm.append('familiar1',familiar1);
+          dataForm.append('familiar2',familiar2);
+          dataForm.append('familiar3',familiar3);
+          dataForm.append('unidad',unidad);
+          dataForm.append('pagina',pagina);
+          //lamando al metodo ajax
+
+          $.ajax({
+            url :url,
+            data : dataForm,
+            contentType:false,
+            processData:false,
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+            type: 'POST',
+            dataType : 'json',
+            beforeSend: function (){
+              $("#modalCarga").modal();
+            },
+            success : function(json){
+
+
+
+            },
+            error : function(xhr, status) {
+              $("#textoModalMensaje").text('Existió un problema con la operación');
+              $("#modalMensaje").modal();
+            },
+            complete : function(xhr, status){
+               $("#modalCarga").modal('hide');
+            }
+          });//*/
         }
   </script>
   <!-- script zoom con jetzoom-->

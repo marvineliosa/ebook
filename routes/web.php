@@ -47,7 +47,10 @@ Route::get('/pagina/7', function (){return view('pagina77');});
 Route::get('/nahuatl', function (){return view('audio_nahuatl');});
 
 //Paginas sin Capitulo
-  Route::get('1/1/1', function (){return view('pagina1');});
+Route::get('1/1/1', 'PaginasController@Pagina1');
+Route::post('/almacenar/pagina1', 'PaginasController@AlmacenarPagina1');
+
+  //Route::get('1/1/1', function (){return view('pagina1');});
   Route::get('1/1/2', function (){return view('pagina2');});
   Route::get('1/1/3', function (){return view('pagina3');});
   Route::get('1/1/4', function (){return view('pagina4');});
@@ -66,19 +69,36 @@ Route::get('/nahuatl', function (){return view('audio_nahuatl');});
   Route::get('1/1/13', function (){return view('Capitulo_1/pagina13');});
   Route::get('1/1/14', function (){return view('Capitulo_1/pagina14');});
   Route::get('1/1/15', function (){return view('Capitulo_1/pagina15');});
-  Route::get('1/1/16', function (){return view('Capitulo_1/pagina16');});
-  Route::get('1/1/17', function (){return view('Capitulo_1/pagina17');});
-  Route::get('1/1/18', function (){return view('Capitulo_1/pagina18');});
-  Route::get('1/1/19', function (){return view('Capitulo_1/pagina19');});
+  Route::get('1/1/16', 'PaginasController@Pagina16');
+  Route::post('/almacenar/pagina16', 'PaginasController@AlmacenarPagina16');
+
+  //Route::get('1/1/16', function (){return view('Capitulo_1/pagina16');});
+  Route::get('1/1/17', 'PaginasController@Pagina17');
+  Route::post('/almacenar/pagina17', 'PaginasController@AlmacenarPagina17');
+  //Route::get('1/1/17', function (){return view('Capitulo_1/pagina17');});
+  //Route::get('1/1/18', function (){return view('Capitulo_1/pagina18');});
+  Route::get('1/1/18', 'PaginasController@Pagina18');
+  Route::post('/almacenar/pagina18', 'PaginasController@AlmacenarPagina18');
+  //Route::get('1/1/19', function (){return view('Capitulo_1/pagina19');});
+  Route::get('1/1/19', 'PaginasController@Pagina19');
+  Route::post('/almacenar/pagina19', 'PaginasController@AlmacenarPagina19');
 
   //Capitulo 2
   Route::get('1/2/20', function (){return view('Capitulo_2/pagina20');});
   Route::get('1/2/21', function (){return view('Capitulo_2/pagina21');});
   Route::get('1/2/22', function (){return view('Capitulo_2/pagina22');});
-  Route::get('1/2/23', function (){return view('Capitulo_2/pagina23');});
+  //Route::get('1/2/23', function (){return view('Capitulo_2/pagina23');});
+  Route::get('1/2/23', 'PaginasController@Pagina23');
+  Route::post('/almacenar/pagina23', 'PaginasController@AlmacenarPagina23');
   Route::get('1/2/24', function (){return view('Capitulo_2/pagina24');});
+  //Route::get('1/2/24', 'PaginasController@Pagina24');
+  //Route::post('/almacenar/pagina24', 'PaginasController@AlmacenarPagina24');
   Route::get('1/2/25', function (){return view('Capitulo_2/pagina25');});
+  //Route::get('1/2/25', 'PaginasController@Pagina25');
+  //Route::post('/almacenar/pagina25', 'PaginasController@AlmacenarPagina25');
   Route::get('1/2/26', function (){return view('Capitulo_2/pagina26');});
+  //Route::get('1/2/26', 'PaginasController@Pagina26');
+  //Route::post('/almacenar/pagina26', 'PaginasController@AlmacenarPagina26');
 
   //Capitulo 3
   Route::get('1/3/27', function (){return view('Capitulo_3/pagina27');});
