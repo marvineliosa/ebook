@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
+      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br><br><audio id="audio2" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Padres/Capitulo_8/Pag 66.mp3"></audio><br>-->
       <br>
       <br>
     <!--  <h3 class="box-title"><audio id="audio" controls>
@@ -39,13 +39,29 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_4/2017PUE_PRIM_39.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_4/2017PUE_PRIM_39.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box">
+          <img src="{{asset('paginas/Capitulo4/recortes/2017PUE_PRIM_43.JPG')}}" class="img-fluid jetzoom" data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo4/recortes/2017PUE_PRIM_43.JPG')}}'"  style="max-width: 100%">
+          <br>
+          <br>
+          <p class="text-left"> Menciona algo que hayas aprendido sobre <code class="text-purple "><strong>Reparacion del daño</strong></code>y explicalo con tus propias palabras:</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"> ¿Cómo te sientes con el valor que aprendiste hoy?</p>
+          <input type="text text-center" class="form-control" align="center" id="Entrada_Que_aprendi_del_Cuento" placeholder="Escribe aqui tu respuesta" value="{{((isset($datos->respuesta1))?$datos->respuesta1:'')}}">
+          <br>
+          <p class="text-left"><code class="text-blue"><strong>Conclusiones</strong></code></p>
+          <p class="text-left">Anota dos conclusiones importantes a las que llegó el grupo</p>
+          <p><class="text-left"> <textarea name="mensaje" placeholder="" rows="5" cols="50"></textarea></p>
+          <br>
+          <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+
+        </div>
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer" align="center">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" onclick="anterior(39)"><i class="fa  fa-arrow-left"></i></button>
+        <button type="button" class="btn btn-default" onclick="anterior(38)"><i class="fa  fa-arrow-left"></i></button>
         <button type="button" class="btn btn-default" onclick="siguiente(40)"><i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
@@ -61,7 +77,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,7 +85,6 @@
       <div class="modal-body">
 
         <div align='center'>
-          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">

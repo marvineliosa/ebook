@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <script type="text/javascript">
 
-  var Capitulo = 14;
+  var Capitulo = 14;var titulo_text = "La influencia de mis compañeros";
   var pagina_actual = 113;
 
 
@@ -20,13 +20,13 @@
             var element = document.getElementById('myImg');
             element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
             element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
-            document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+            document.getElementById("titulo").innerHTML = titulo_text;
         }
     function datos2()
         {
              var element2 = document.getElementById('myImg2');
              element2.src = "{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg";
-             element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
+             element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";var element_audio = document.getElementById('audio2');element_audio.src = "{{asset('/')}}"+"audio/Capitulo_"+Capitulo+"/Pag "+pagina_actual+".mp3";
         }
 
 </script>
@@ -49,7 +49,7 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header with-border" align="center">
-      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br><br><audio id="audio2" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Padres/Capitulo_8/Pag 66.mp3"></audio><br>
       <br>
 
       <!-- <div class="box-tools pull-right">
@@ -62,7 +62,7 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+        <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 50%">
 
        </div> <script type="text/javascript"> datos(); </script> </div>
 
@@ -85,7 +85,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -96,7 +96,7 @@
           <audio id="audio" controls="">
                     <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_14/Pag 113.mp3">
                   </audio>
-          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+          <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 100%">
 
         </div>
       </div>
@@ -120,7 +120,7 @@
          {
            Capitulo =  Capitulo + 1;
          }
-       location.href = "/5/"+Capitulo+"/"+(pagina_actual+1);
+       location.href = "/1/"+Capitulo+"/"+(pagina_actual+1);
 
      }
    function anterior()
@@ -129,7 +129,7 @@
           {
             Capitulo = Capitulo - 1;
           }
-        location.href = "/5/"+Capitulo+"/"+(pagina_actual-1);
+        location.href = "/1/"+Capitulo+"/"+(pagina_actual-1);
         //alert("atras");
       }
 </script>

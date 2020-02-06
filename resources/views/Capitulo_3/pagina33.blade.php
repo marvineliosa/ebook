@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
       <br>
     <!--  <h3 class="box-title"><audio id="audio" controls>
@@ -39,7 +39,69 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_3/2017PUE_PRIM_33.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_3/2017PUE_PRIM_33.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box ">
+          <div class="row">
+            <div class="col-xs-2 col-md-2" style="background-color:white;" >
+              <img src="{{asset('paginas/Capitulo3/recortes/2017PUE_PRIM_37_1.JPG')}}" class="img-fluid" style="width:190%;">
+            </div>
+            <div class="col-xs-10 col-md-10" style="background-color:white;">
+              <img src="{{asset('paginas/Capitulo3/recortes/2017PUE_PRIM_37_2.JPG')}}" class="img-fluid" style="width:110%;">
+              <div class="form-group has-warning"><label class="control-label" for="inputWarning"><i class="fa"></i><h3>Ejemplos:</h3></label></div>
+              <div class="has-error">
+                <label class="control-label"><i class="fa fa-times-circle-o"></i></label>
+                <span clas="has-error">Me comprometo a ser disciplinado y persistente día a día para fortalecer mi fuerza de voluntad y conseguir mis objetivos.</span>
+                <br>
+                <label class="control-label"><i class="fa fa-times-circle-o"></i></label>
+                <span>Me comprometo a ponerme metas y objetivos en mi vida personal y escolar.</span>
+              </div>
+              <div class="row">
+                <div class="col-xs-2 col-md-2" style="background-color:white;">
+                  <p class="text-purple ">Yo:</p>
+                </div>
+                <div class="col-xs-10 col-md-10" style="background-color:white;">
+                  <input type="text" class="form-control" id="Entrada_nombre" placeholder="Escribe tu nombre aquí" value="{{((isset($datos->nombre))?$datos->nombre:'')}}">
+                </div>
+              </div>
+              <span>me comprometo conmigo mismo a:</span>
+              <input type="text" class="form-control" id="Entrada_Compromiso_individual" placeholder="Escribe tu compromiso individual aquí" value="{{((isset($datos->compromiso))?$datos->compromiso:'')}}">
+              <span>Y con mi grupo a:</span>
+              <input type="text" class="form-control" id="Entrada_Compromiso_Grupal" placeholder="Escribe tu compromiso grupal aquí" value="{{((isset($datos->compromisogrupal))?$datos->compromisogrupal:'')}}">
+              <br>
+              <p class="text-center">
+                Me acabo de comprometer<br>¿Me ayudas a cumplir mi compromiso?
+              </p>
+
+              <div class="row">
+                <div class="col-xs-12 col-md-12" style="background-color:white;">
+                  <p class="text-aqua text-center">Yo:</p>
+                  <input type="text" class="form-control" id="Entrada_nombre_tutor_1" placeholder="Nombre del padre o tutor" value="{{((isset($datos->ayuda1))?$datos->ayuda1:'')}}">
+                </div>
+
+                <!-- <div class="col-xs-6 col-md-6" style="background-color:white;">
+                  <p class="text-green text-center">Yo:</p>
+                  <input type="text" class="form-control" id="Entrada_nombre_tutor_2" placeholder="Mamá" value="{{((isset($datos->ayuda2))?$datos->ayuda2:'')}}">
+                </div> -->
+              </div>
+              <br>
+              <p class="text-center">
+                me comprometo a apoyar el compromiso de mi hijo y a reunirme con mis familiares para platicar respecto a este tema.
+              </p>
+              <br>
+              <p class="text-center">
+                    Otros familiares que quieran unirse a este compromiso:
+              </p>
+              <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_1" placeholder="Nombre del familiar" value="{{((isset($datos->familiar1))?$datos->familiar1:'')}}">
+              <br>
+              <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_2" placeholder="Nombre del familiar" value="{{((isset($datos->familiar2))?$datos->familiar2:'')}}">
+              <br>
+              <input type="text text-center" class="form-control" align="center" id="Entrada_familiar_3" placeholder="Nombre del familiar" value="{{((isset($datos->familiar3))?$datos->familiar3:'')}}">
+              <br>
+              <button type="button" class="btn btn-block btn-default" id="Boton_Aceptar()" onclick="almacenarInformacion()">Aceptar</button>
+              <br>
+              <img src="{{asset('paginas/Capitulo3/recortes/2017PUE_PRIM_37_3.JPG')}}" class="img-fluid jetzoom" data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo3/recortes/2017PUE_PRIM_37_3.JPG')}}'" style="width:110%;">
+            </div>
+          </div>
+       </div>
       </div>
     </div>
     <!-- /.box-body -->
@@ -61,15 +123,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
         <div align='center'>
-          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
+          <audio id="audio" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo3/familiares/Pag 39.mp3"></audio>
+          <img src="{{asset('padres/Capitulo3/2017PUE_PRIM_FAM_5_39.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo3/2017PUE_PRIM_FAM_5_39.jpg')}}'"  style="max-width: 100%">
+          <audio id="audio" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo3/familiares/Pag 40.mp3"></audio>
+          <img src="{{asset('padres/Capitulo3/2017PUE_PRIM_FAM_5_40.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo3/2017PUE_PRIM_FAM_5_40.jpg')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -84,7 +148,7 @@
   <script type="text/javascript">
     function siguiente(pagina)
        {
-        location.href = pagina;
+        window.location.replace('http://localhost:8000/1/4/34');
          //alert("adelante");
        }
      function anterior(pagina)

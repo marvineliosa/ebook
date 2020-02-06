@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
+      <button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>
       <br>
       <br>
     <!--  <h3 class="box-title"><audio id="audio" controls>
@@ -39,7 +39,12 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_6/2017PUE_PRIM_52.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_6/2017PUE_PRIM_52.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box">
+          <img src="{{asset('paginas/Capitulo6/recortes/2017PUE_PRIM_56_1.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo6/recortes/2017PUE_PRIM_56_1.JPG')}}'" style="max-width: 100%" >
+          <br>
+            <p class="text-left"><textarea class="form-control" name="mensaje" placeholder="Anota otras consecuencias negativas" rows="5" cols="50"></textarea></p>
+            <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+        </div>
       </div>
     </div>
     <!-- /.box-body -->
@@ -61,15 +66,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
         <div align='center'>
-          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Capitulo6/2017PUE_PRIM_FAM_5_57.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo6/2017PUE_PRIM_FAM_5_57.jpg')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -89,7 +93,7 @@
        }
      function anterior(pagina)
         {
-          window.location.replace('http://localhost:8000/1/5/51');
+          location.href = pagina;
           //alert("atras");
         }
   </script>

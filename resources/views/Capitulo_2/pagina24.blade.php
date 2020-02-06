@@ -39,7 +39,13 @@
     </div>
     <div class="box-body">
       <div align='center'>
-        <img src="{{asset('paginas/Capitulo_2/2017PUE_PRIM_24.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo_2/2017PUE_PRIM_24.JPG')}}'" style="max-width: 50%" > <!--LINEA TRABJA CON JETZOOM-->
+        <div class="login-box">
+          <img src="{{asset('paginas/Capitulo2/recortes/2017PUE_PRIM_28.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo2/recortes/2017PUE_PRIM_28.JPG')}}'" style="max-width: 100%" >
+          <br>
+          <br>
+          <p class="text-left"><textarea class="form-control" name="mensaje" id="respuesta" placeholder="Anota otras consecuencias positivas" rows="5" cols="50"> {{((isset($datos->comentario_negativo))?$datos->comentario_negativo:'')}}</textarea></p>
+          <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
+        </div>
       </div>
     </div>
     <!-- /.box-body -->
@@ -61,15 +67,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
         <div align='center'>
-          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_26.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_26.jpg')}}'"  style="max-width: 100%">
+          <audio id="audio" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo2/familiares/Pag 31.mp3"></audio>
+          <img src="{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_31.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo2/2017PUE_PRIM_FAM_5_31.jpg')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">
@@ -91,6 +97,48 @@
         {
           location.href = pagina;
           //alert("atras");
+        }
+
+        function almacenarInformacion(){
+          var respuesta = $('#respuesta').val();
+          var unidad = 2;
+          var pagina = 24;
+
+          //$("#div_cuadro").hide();
+          var success;
+          var url = "/almacenar/pagina24";
+          var dataForm = new FormData();
+          dataForm.append('respuesta',respuesta);
+          dataForm.append('unidad',unidad);
+          dataForm.append('pagina',pagina);
+          //lamando al metodo ajax
+
+          $.ajax({
+            url :url,
+            data : dataForm,
+            contentType:false,
+            processData:false,
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+            type: 'POST',
+            dataType : 'json',
+            beforeSend: function (){
+              $("#modalCarga").modal();
+            },
+            success : function(json){
+
+
+
+            },
+            error : function(xhr, status) {
+              $("#textoModalMensaje").text('Existió un problema con la operación');
+              $("#modalMensaje").modal();
+            },
+            complete : function(xhr, status){
+               $("#modalCarga").modal('hide');
+            }
+          });//*/
         }
   </script>
   <!-- script zoom con jetzoom-->
