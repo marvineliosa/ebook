@@ -42,7 +42,7 @@
         <div class="box-footer" align="center">
         <div class="btn-group">
           <button type="button" class="btn btn-default" onclick="anterior(19)"><i class="fa  fa-arrow-left"></i></button>
-          <button type="button" class="btn btn-default" onclick="anterior(21)"><i class="fa fa-arrow-right"></i></button>
+          <button type="button" class="btn btn-default" onclick="siguiente(21)"><i class="fa fa-arrow-right"></i></button>
         </div>
         </div>
         <!-- /.box-footer-->
@@ -82,7 +82,7 @@
      //alert("adelante");
     }
     function anterior(pagina){
-        location.href = pagina;
+        window.location.replace('http://localhost:8000/1/1/19');
         //alert("atras");
       }
 

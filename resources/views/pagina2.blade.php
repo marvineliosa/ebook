@@ -22,7 +22,7 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
+      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br><br><audio id="audio2" controls=""><source type="audio/wav" src="http://127.0.0.1:8000/audio/Padres/Capitulo_8/Pag 66.mp3"></audio><br>-->
       <br>
       <br>
     <!--<h3 class="box-title"><audio id="audio" controls>
@@ -61,7 +61,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" align="center">
-        <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -91,6 +91,48 @@
         {
             location.href = pagina;
           //alert("atras");
+        }
+
+
+        function almacenarInformacion(){
+          var respuesta1 = $('#mi_nombre').val();
+          var respuesta2 = "";
+          var respuesta3 = "";
+          //$("#div_cuadro").hide();
+          var success;
+          var url = "/almacenar/pagina1";
+          var dataForm = new FormData();
+          dataForm.append('respuesta1',respuesta1);
+          dataForm.append('respuesta2',respuesta2);
+          dataForm.append('respuesta3',respuesta3);
+          //lamando al metodo ajax
+
+          $.ajax({
+            url :url,
+            data : dataForm,
+            contentType:false,
+            processData:false,
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+            type: 'POST',
+            dataType : 'json',
+            beforeSend: function (){
+              $("#modalCarga").modal();
+            },
+            success : function(json){
+
+
+
+            },
+            error : function(xhr, status) {
+              $("#textoModalMensaje").text('Existió un problema con la operación');
+              $("#modalMensaje").modal();
+            },
+            complete : function(xhr, status){
+               $("#modalCarga").modal('hide');
+            }
+          });//*/
         }
   </script>
   <!-- script zoom con jetzoom-->

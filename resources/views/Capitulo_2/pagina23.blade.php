@@ -39,7 +39,7 @@
             <img src="{{asset('paginas/Capitulo2/recortes/2017PUE_PRIM_27.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo2/recortes/2017PUE_PRIM_27.JPG')}}'" style="max-width: 100%" >
             <br>
             <br>
-            <p class="text-left"><textarea class="form-control" name="mensaje" placeholder="Anota otras consecuencias negativas" rows="5" cols="50"></textarea></p>
+            <p class="text-left"><textarea class="form-control" name="mensaje" id="comentario1" placeholder="Anota otras consecuencias negativas" rows="5" cols="50">{{((isset($datos->comentario_negativo))?$datos->comentario_negativo:'')}}</textarea></p>
             <button type="button" class="btn btn-block btn-default" id="Boton_Enviar_Respuestas()" onclick="almacenarInformacion()">Enviar respuestas</button>
           </div>
            <!--LINEA TRABJA CON JETZOOM-->
@@ -85,56 +85,47 @@
 
 @section('script')
   <script type="text/javascript">
-    function almacenarInformacion(){
-      var nombre = $('#Entrada_nombre').val();
-      var compromiso = $('#Entrada_Compromiso_individual').val();
-      var compromiso_grupal = $('#Entrada_Compromiso_Grupal').val();
-      var papa = $('#Entrada_nombre_tutor_1').val();
-      var mama = $('#Entrada_nombre_tutor_2').val();
-      var familiar1 = $('#Entrada_familiar_1').val();
-      var familiar2 = $('#Entrada_familiar_2').val();
-      var familiar3 = $('#Entrada_familiar_3').val();
-      //$("#div_cuadro").hide();
-      var success;
-      var url = "/almacenar/pagina-9";
-      var dataForm = new FormData();
-      dataForm.append('nombre',nombre);
-      dataForm.append('compromiso',compromiso);
-      dataForm.append('compromiso_grupal',compromiso_grupal);
-      dataForm.append('papa',papa);
-      dataForm.append('mama',mama);
-      dataForm.append('familiar1',familiar1);
-      dataForm.append('familiar2',familiar2);
-      dataForm.append('familiar3',familiar3);
-      //lamando al metodo ajax
+  function almacenarInformacion(){
+    var respuesta = $('#comentario1').val();
+    var unidad = 2;
+    var pagina = 23;
 
-      $.ajax({
-        url :url,
-        data : dataForm,
-        contentType:false,
-        processData:false,
-        headers:{
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-        type: 'POST',
-        dataType : 'json',
-        beforeSend: function (){
-          $("#modalCarga").modal();
+    //$("#div_cuadro").hide();
+    var success;
+    var url = "/almacenar/pagina23";
+    var dataForm = new FormData();
+    dataForm.append('respuesta',respuesta);
+    dataForm.append('unidad',unidad);
+    dataForm.append('pagina ',pagina);
+    //lamando al metodo ajax
+
+    $.ajax({
+      url :url,
+      data : dataForm,
+      contentType:false,
+      processData:false,
+      headers:{
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        success : function(json){
+      type: 'POST',
+      dataType : 'json',
+      beforeSend: function (){
+        $("#modalCarga").modal();
+      },
+      success : function(json){
 
 
 
-        },
-        error : function(xhr, status) {
-          $("#textoModalMensaje").text('Existió un problema con la operación');
-          $("#modalMensaje").modal();
-        },
-        complete : function(xhr, status){
-           $("#modalCarga").modal('hide');
-        }
-      });//*/
-    }
+      },
+      error : function(xhr, status) {
+        $("#textoModalMensaje").text('Existió un problema con la operación');
+        $("#modalMensaje").modal();
+      },
+      complete : function(xhr, status){
+         $("#modalCarga").modal('hide');
+      }
+    });//*/
+  }
 
     function siguiente(pagina){
       window.location.replace('http://localhost:8000/1/2/24');

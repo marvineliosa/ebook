@@ -8,7 +8,21 @@
 
 var Capitulo = parseInt('{{((isset($datos["capitulo"]))?$datos["capitulo"]:"")}}',10);
 var pagina_actual = parseInt('{{((isset($datos["pagina"]))?$datos["pagina"]:"")}}',10);//*/
+var titulo_text = "";
 
+switch (Capitulo)
+  {
+        case 8:titulo_text = "Aunque somos iguales, tenemos muchas diferencias: biodiversidad genética"; break;
+        case 9:titulo_text = "Los animales de la granja no deben sufrir"; break;
+        case 10:titulo_text = "Expresión de emociones y apoyo para su regulación"; break;
+        case 11:titulo_text = "Camino a la adolescencia"; break;
+        case 12:titulo_text = "Juntos somos más fuertes"; break;
+        case 13:titulo_text = "Diversidad y discriminación"; break;
+        case 14:titulo_text = "La influencia de mis compañeros"; break;
+        case 15:titulo_text = "Crecimiento, cambios físicos y emocionales"; break;
+        default:titulo_text = "Pagina aun en desarrollo"; break;break;
+
+  }
 
 
 function carga_ejemplo(pagina)
@@ -22,7 +36,7 @@ function carga_ejemplo(pagina)
           var element = document.getElementById('myImg');
           element.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg";
           element.zoomImage = "zoomImage:'{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Pagina_"+pagina_actual+".jpg'";
-          document.getElementById("titulo").innerHTML = "Capitulo: "+Capitulo+" Pagina: "+pagina_actual;
+          document.getElementById("titulo").innerHTML = titulo_text;
 
           var element_imagen_uni = document.getElementById('imagen_pre2');
           element_imagen_uni.src = "{{asset('/')}}"+"paginas/Capitulo_"+Capitulo+"/Copia de Pagina_"+pagina_actual+".jpg";
@@ -36,6 +50,9 @@ function carga_ejemplo(pagina)
            var element2 = document.getElementById('myImg2');
            element2.src = "{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg";
            element2.zoomImage = "zoomImage:'{{asset('/')}}"+"padres/Capitulo_"+Capitulo+"/Pagina_Padres_"+pagina_actual+".jpg'";
+           var element_audio = document.getElementById('audio');
+           element_audio.src = "{{asset('/')}}"+"audio/Padres/Capitulo_"+Capitulo+"/Pag "+pagina_actual+".mp3";
+
       }
 
 </script>
@@ -57,7 +74,7 @@ function carga_ejemplo(pagina)
 
 <!-- Default box -->
 <div class="box">
-  <div class="box-header with-border" align="center"><button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br></div>
+  <div class="box-header with-border" align="center"><button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button><br><br></div>
   <div class="box-body">
 
   </div>
@@ -70,7 +87,7 @@ function carga_ejemplo(pagina)
                  <div class="col-xs-2 col-md-2" style="background-color:white;"></div>
                  <div class="col-xs-8 col-md-8" style="background-color:white;">
 
-                       <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+                       <img id="myImg" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 80%">
                        <br>
                        <textarea id="Entrada_pre1" class="form-control" name="mensaje" placeholder="Escribe aqui tu respuesta " rows="5" cols="20">{{((isset($datos["info"]->pre1))?$datos["info"]->pre1:"")}}</textarea>
                        <br>
@@ -79,7 +96,7 @@ function carga_ejemplo(pagina)
                        <textarea id="Entrada_pre2" class="form-control" name="mensaje" placeholder="Escribe aqui tu respuesta " rows="5" cols="20">{{((isset($datos["info"]->pre2))?$datos["info"]->pre2:"")}}</textarea>
                        <br>
                        <br>
-                       <img  id = "imagen_conclusion"src="{{asset('paginas/p7.PNG')}}" style="width:100%;">
+                       <img  id = "imagen_conclusion"src="{{asset('paginas/p7.PNG')}}" style="width:80%;">
                        <br>
                        <br>
                        <textarea id="Entrada_con" class="form-control" name="mensaje" placeholder="Escribe aqui tu respuesta " rows="5" cols="20">{{((isset($datos["info"]->conclusion))?$datos["info"]->conclusion:"")}}</textarea>
@@ -113,7 +130,7 @@ function carga_ejemplo(pagina)
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header" align="center">
-      <h1 class="modal-title" id="exampleModalLabel">Sugerencia para padres</h1>
+      <h1 class="modal-title" id="exampleModalLabel">Familiares</h1>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -122,9 +139,9 @@ function carga_ejemplo(pagina)
       <div align='center'>
         <br>
         <audio id="audio" controls="">
-                  <source type="audio/wav" src="http://127.0.0.1:8000/audio/Capitulo_8/Pag 66.mp3">
+                  <source type="audio/wav" src="http://127.0.0.1:8000/audio/Padres/Capitulo_8/Pag 66.mp3">
                 </audio>
-        <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_7.jpg')}}'"  style="max-width: 100%">
+        <img id="myImg2" src="{{asset('padres/Padres_1.jpg')}}" class="img-fluid jetzoom"  data-jetzoom =""  style="max-width: 80%">
 
       </div>
     </div>
