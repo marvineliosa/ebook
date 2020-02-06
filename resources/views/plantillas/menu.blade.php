@@ -82,9 +82,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.12
+      <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+    <strong>Copyright &copy; EXE 2020.</strong> All rights
     reserved.
   </footer>
 
@@ -129,7 +129,13 @@ fin zoom-->
 @yield('script')
 
 <script type="text/javascript">
-  
+
+    var elementoPadre = $('button:contains("Sugerencias para papás")');
+    $(elementoPadre).text('Tema familiares');
+    var elementoPadre = $('h1:contains("Sugerencia para padres")');
+    $(elementoPadre).text('Familiares');
+    var elementoPadre = $('div:contains("Unlicensed Jet Zoom website")');
+    $(elementoPadre).text('Familiares');
     function sugerencia(){
       $("#ModalPadres").modal();
 

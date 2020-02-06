@@ -6,7 +6,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    "El alcoholismo en la adolescencia: un peligro"
+    <!-- "El alcoholismo en la adolescencia: un peligro" -->
     <!-- <small>Algún texto pequeño</small> -->
   </h1>
   <ol class="breadcrumb">

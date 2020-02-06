@@ -26,7 +26,7 @@
       <br>
       <br>
     <h3 class="box-title"><audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/Primpag5.mp3')}}">
+          <source type="audio/wav" src="{{asset('audio/Capitulo0/Primpag5.mp3')}}">
         </audio></h3>
 
       <div class="box-tools pull-right">
@@ -41,7 +41,7 @@
       <div align='center'>
 
         <div class="login-box">
-          <img src="{{asset('paginas/2017PUE_PRIM_1.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/2017PUE_PRIM_1.JPG')}}'" style="max-width: 160%" >
+          <img src="{{asset('paginas/Capitulo0/0001.JPG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('paginas/Capitulo0/0001.JPG')}}'" style="max-width: 160%" >
           <br>
           <br>
           <p class="text-left"> Mi nombre es:</p>

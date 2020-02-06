@@ -6,7 +6,7 @@
     Copyright (c)2012-2015 Star Plugins - www.starplugins.com
     
     Downloaded on Jul 27, 2019 by account #TRIAL USER
-    License Key: N/A
+    License Key: 0ede7372e481dd4d99d1d01d459afffa
     Licensed website(s): .zolik.000webhostapp.com
 */
 (new window['\x46\x75\x6E\x63\x74\x69\x6F\x6E'](['e.fn.JetZoom.attr=\"data-jetzoom\";e.fn.JetZoom.defaults={image:\"\",zoomImage:\"\",tintColor:\"#fff\",tintOpacity:0.5,fadeTime:750,lensClass:\"jetzoom-lens\",lensProportions:\"width\",lensAutoCircle:!1,innerZoom:!1,galleryEvent:\"click\"};c.I();window.JetZoom=c})(jQuery);',

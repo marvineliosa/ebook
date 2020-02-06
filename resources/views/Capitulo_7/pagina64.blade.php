@@ -22,12 +22,12 @@
   <!-- Default box -->
   <div class="box">
       <div class="box-header with-border" align="center">
-      <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
+        <button type="submit" class="btn btn-success" onclick="sugerencia()">Tema familiares</button>
       <br>
       <br>
-    <!--  <h3 class="box-title"><audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/Parte 0.wav')}}">
-        </audio></h3>-->
+      <h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/alumnos/Pag_64.mp3')}}">
+        </audio></h3>
 
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -75,7 +75,7 @@
       <div class="modal-body">
 
         <div align='center'>
-          <img src="{{asset('padres/Padres_0.PNG')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Padres_0.PNG')}}'"  style="max-width: 100%">
+          <img src="{{asset('padres/Capitulo7/2017PUE_PRIM_FAM_5_65.jpg')}}" class="img-fluid jetzoom"  data-jetzoom ="zoomImage:'{{asset('padres/Capitulo7/2017PUE_PRIM_FAM_5_65.jpg')}}'"  style="max-width: 100%">
         </div>
       </div>
       <div class="modal-footer">

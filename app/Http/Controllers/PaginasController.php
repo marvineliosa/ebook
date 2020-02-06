@@ -16,6 +16,34 @@
          * @return Response
          */
 
+        public function PaginaTotonaco($pagina){
+            $ruta = '';
+            if($pagina < 10){
+                $ruta = '../libro_totonaco/000'.$pagina.'.jpg';
+            }else if($pagina > 9 && $pagina < 100){
+                $ruta = '../libro_totonaco/00'.$pagina.'.jpg';
+            }else{
+                $ruta = '../libro_totonaco/0'.$pagina.'.jpg';
+            }
+
+            // dd($ruta);
+            return view('totonaco.pagina_totonaco')->with(["ruta"=>$ruta,'pagina'=>$pagina]);
+        }
+
+        public function PaginaNahuatl($pagina){
+            $ruta = '';
+            if($pagina < 10){
+                $ruta = '../libro_nahuatl/000'.$pagina.'.jpg';
+            }else if($pagina > 9 && $pagina < 100){
+                $ruta = '../libro_nahuatl/00'.$pagina.'.jpg';
+            }else{
+                $ruta = '../libro_nahuatl/0'.$pagina.'.jpg';
+            }
+
+            // dd($ruta);
+            return view('nahuatl.pagina_nahuatl')->with(["ruta"=>$ruta,'pagina'=>$pagina]);
+        }
+
         public function PaginaIngles($pagina){
             $ruta = '';
             if($pagina < 10){
@@ -225,7 +253,7 @@
         public function Pagina66(Request $request)
             {
                 $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
-
+                // dd($usuario);
                 $datos = DB::table('table_resp_ac1')
                             ->where('user',$usuario)
                             ->get();
@@ -347,5 +375,211 @@
                             echo json_encode($data);//*/
 
                         }
+
+        //********************************************************************************
+
+                public function Obtener_Comentarios($capitulo,$pagina)
+                    {
+                      if(
+                          $pagina == 68  ||
+                          $pagina == 77  ||
+                          $pagina == 84  ||
+                          $pagina == 91  ||
+                          $pagina == 99  ||
+                          $pagina == 106  ||
+                          $pagina == 113  ||
+                          $pagina == 121
+                        )
+                          {
+                              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario'); //manejo de sesion
+                              $datos = DB::table('opinion')
+                                          ->where('user',$usuario)
+                                          ->where('unidad',$capitulo)
+                                          ->where('pagina',$pagina)//*/
+                                          ->get();
+                              if(count($datos)>0) { $datos = $datos[0];}
+                              $json = array ( "info" => $datos,"capitulo" => $capitulo,"pagina" => $pagina);
+
+                              return view("plantilla_Opinion")->with(["datos"=>$json]);
+
+
+
+                          }
+                      else
+                          {
+                              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario'); //manejo de sesion
+                              if(
+                                  $pagina == 67  ||
+                                  $pagina == 76  ||
+                                  $pagina == 83  ||
+                                  $pagina == 90  ||
+                                  $pagina == 98  ||
+                                  $pagina == 105  ||
+                                  $pagina == 112  ||
+                                  $pagina == 120
+                                )
+                                {
+                                  $datos = DB::table('comentarios_positivos')
+                                              ->where('user',$usuario)
+                                              ->where('unidad',$capitulo)
+                                              ->where('pagina',$pagina)//*/
+                                              ->get();
+                                }
+                              else
+                                {
+                                  $datos = DB::table('comentarios_negativos')
+                                              ->where('user',$usuario)
+                                              ->where('unidad',$capitulo)
+                                              ->where('pagina',$pagina)//*/
+                                              ->get();
+                                }
+
+                              if(count($datos)>0) { $datos = $datos[0];}
+                              $json = array ( "info" => $datos,"capitulo" => $capitulo,"pagina" => $pagina);
+
+                              return view("plantilla_Comentario")->with(["datos"=>$json]);
+                          }
+                    }
+
+                    public function Almacenar_Comentario_neg(Request $request)
+                          {
+                              date_default_timezone_set('America/Mexico_City');
+
+                              $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+                              $tipo = null;
+                              $existe = DB::table('comentarios_negativos')
+                                          ->where('user',$usuario)
+                                          ->where('unidad',$request['Capitulo'])
+                                          ->where('pagina',$request['pagina_actual'])
+                                          ->get();
+
+                              if(count($existe)>0)
+                                {
+                                    $tipo = 'update';
+                                    DB::table('comentarios_negativos')
+                                              ->where('user', $usuario)
+                                              ->where('unidad',$request['Capitulo'])
+                                              ->where('pagina',$request['pagina_actual'])
+                                              ->update(
+                                                        [
+                                                            'user' => $usuario,
+                                                            'unidad' => $request['Capitulo'],
+                                                            'pagina' => $request['pagina_actual'],
+                                                            'comentario_negativo' => $request['comentario'],
+                                                            'updated_at' => date('Y-m-d H:i:s')
+                                                        ]);
+                                }
+                              else
+                                {
+                                    $tipo = 'insert';
+                                    DB::table('comentarios_negativos')
+                                              ->insert(
+                                                        [
+                                                            'user' => $usuario,
+                                                            'unidad' => $request['Capitulo'],
+                                                            'pagina' => $request['pagina_actual'],
+                                                            'comentario_negativo' => $request['comentario'],
+                                                            'created_at' => date('Y-m-d H:i:s')
+                                                        ]);
+                                }
+                              $data = array("exito" => $tipo);
+                              echo json_encode($data);//*/
+
+                          }
+                          public function Almacenar_Comentario_pos(Request $request)
+                                {
+                                    date_default_timezone_set('America/Mexico_City');
+
+                                    $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+                                    $tipo = null;
+                                    $existe = DB::table('comentarios_positivos')
+                                                ->where('user',$usuario)
+                                                ->where('unidad',$request['Capitulo'])
+                                                ->where('pagina',$request['pagina_actual'])
+                                                ->get();
+
+                                    if(count($existe)>0)
+                                      {
+                                          $tipo = 'update';
+                                          DB::table('comentarios_positivos')
+                                                    ->where('user', $usuario)
+                                                    ->where('unidad',$request['Capitulo'])
+                                                    ->where('pagina',$request['pagina_actual'])
+                                                    ->update(
+                                                              [
+                                                                  'user' => $usuario,
+                                                                  'unidad' => $request['Capitulo'],
+                                                                  'pagina' => $request['pagina_actual'],
+                                                                  'comentario_negativo' => $request['comentario'],
+                                                                  'updated_at' => date('Y-m-d H:i:s')
+                                                              ]);
+                                      }
+                                    else
+                                      {
+                                          $tipo = 'insert';
+                                          DB::table('comentarios_positivos')
+                                                    ->insert(
+                                                              [
+                                                                  'user' => $usuario,
+                                                                  'unidad' => $request['Capitulo'],
+                                                                  'pagina' => $request['pagina_actual'],
+                                                                  'comentario_negativo' => $request['comentario'],
+                                                                  'created_at' => date('Y-m-d H:i:s')
+                                                              ]);
+                                      }
+                                    $data = array("exito" => $tipo);
+                                    echo json_encode($data);//*/
+
+                                }
+                                public function Almacenar_Opinion(Request $request)
+                                      {
+                                          date_default_timezone_set('America/Mexico_City');
+
+                                          $usuario = (isset(\Session::get('usuario')[0])?\Session::get('usuario')[0]:'Usuario');
+                                          $tipo = null;
+                                          $existe = DB::table('opinion')
+                                                      ->where('user',$usuario)
+                                                      ->where('unidad',$request['Capitulo'])
+                                                      ->where('pagina',$request['pagina_actual'])
+                                                      ->get();
+
+                                          if(count($existe)>0)
+                                            {
+                                                $tipo = 'update';
+                                                DB::table('opinion')
+                                                          ->where('user', $usuario)
+                                                          ->where('unidad',$request['Capitulo'])
+                                                          ->where('pagina',$request['pagina_actual'])
+                                                          ->update(
+                                                                    [
+                                                                        'user' => $usuario,
+                                                                        'unidad' => $request['Capitulo'],
+                                                                        'pagina' => $request['pagina_actual'],
+                                                                        'pre1' => $request['pre1'],
+                                                                        'pre2' => $request['pre2'],
+                                                                        'conclusion' => $request['conclusion'],
+                                                                        'updated_at' => date('Y-m-d H:i:s')
+                                                                    ]);
+                                            }
+                                          else
+                                            {
+                                                $tipo = 'insert';
+                                                DB::table('opinion')
+                                                          ->insert(
+                                                                    [
+                                                                        'user' => $usuario,
+                                                                        'unidad' => $request['Capitulo'],
+                                                                        'pagina' => $request['pagina_actual'],
+                                                                        'pre1' => $request['pre1'],
+                                                                        'pre2' => $request['pre2'],
+                                                                        'conclusion' => $request['conclusion'],
+                                                                        'created_at' => date('Y-m-d H:i:s')
+                                                                    ]);
+                                            }
+                                          $data = array("exito" => $tipo);
+                                          echo json_encode($data);//*/
+
+                                      }
+        //********************************************************************************
 
     }

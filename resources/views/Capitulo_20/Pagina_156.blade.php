@@ -92,7 +92,7 @@
        }
      function anterior(pagina)
         {
-          location.href = '/'+ libro + '/' + ant_capitulo+ '/' +pagina;
+          location.href = '/'+ libro + '/' + ant_capitulo+ '/' + 'video';
           //alert("atras");
         }  </script>
   <!-- script zoom con jetzoom-->

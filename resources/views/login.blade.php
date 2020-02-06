@@ -31,6 +31,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <div class="login-box">
     <div class="login-logo">
+      <img src="{{asset('images/imagen_exe.png')}}"  style="max-width: 50%" >
       <a href="../../index2.html"><b><h1>Plataforma EXE </h1></b></a>
     </div>
     <!-- /.login-logo -->
@@ -79,6 +80,8 @@
 
     </div>
     <!-- /.login-box-body -->
+    <strong align='center'>Copyright &copy; EXE 2020.</strong> All rights
+    reserved.
   </div>
 <!-- /.login-box -->
 
@@ -123,7 +126,7 @@
       },
       success : function(json){
 
-        location.href='/pagina/1';
+        location.href='/catalogo';
 
 
       },

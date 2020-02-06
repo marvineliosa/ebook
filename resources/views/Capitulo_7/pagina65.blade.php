@@ -25,9 +25,9 @@
       <!--<button type="submit" class="btn btn-success" onclick="sugerencia()">Sugerencias para papás</button>-->
       <br>
       <br>
-    <!--  <h3 class="box-title"><audio id="audio" controls>
-          <source type="audio/wav" src="{{asset('audio/Parte 0.wav')}}">
-        </audio></h3>-->
+      <h3 class="box-title"><audio id="audio" controls>
+          <source type="audio/wav" src="{{asset('audio/alumnos/Pag_65.mp3')}}">
+        </audio></h3>
 
       <!-- <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"

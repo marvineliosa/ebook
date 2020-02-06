@@ -87,7 +87,7 @@
     var libro = 1;
     function siguiente(pagina)
        {
-        location.href = '/'+ libro + '/' + sig_capitulo+ '/' +pagina;
+        location.href = '/'+ libro + '/' + sig_capitulo+ '/' +'video';
          //alert("adelante");
        }
      function anterior(pagina)
